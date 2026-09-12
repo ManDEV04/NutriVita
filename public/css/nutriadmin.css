@@ -1,0 +1,645 @@
+:root {
+    --nutri-dark: #123f37;
+    --nutri-primary: #1d594d;
+    --nutri-secondary: #347766;
+    --nutri-light: #e3f1eb;
+    --nutri-lime: #e8f269;
+    --nutri-background: #f5f8f6;
+    --nutri-text: #1c2925;
+}
+
+/* =========================
+   GENERAL
+========================= */
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+.content-wrapper {
+    background: var(--nutri-background) !important;
+}
+
+/* =========================
+   SIDEBAR
+========================= */
+
+.main-sidebar {
+    background: linear-gradient(
+        180deg,
+        #103a33 0%,
+        #174d43 50%,
+        #296657 100%
+    ) !important;
+
+    border-right: none !important;
+}
+
+/* Logo */
+
+.brand-link {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+    padding-top: 18px !important;
+    padding-bottom: 18px !important;
+}
+
+.brand-text {
+    color: white !important;
+    font-size: 20px;
+}
+
+/* =========================
+   MENÚ
+========================= */
+
+.nav-sidebar .nav-link {
+    margin: 4px 10px;
+    border-radius: 12px;
+    color: rgba(255,255,255,.8) !important;
+    transition: all .2s ease;
+}
+
+.nav-sidebar .nav-link:hover {
+    background: rgba(255,255,255,.10) !important;
+    color: white !important;
+    transform: translateX(3px);
+}
+
+.nav-sidebar .nav-link.active {
+    background: var(--nutri-lime) !important;
+    color: var(--nutri-dark) !important;
+    font-weight: 600;
+}
+
+.nav-sidebar .nav-link.active i {
+    color: var(--nutri-dark) !important;
+}
+
+/* Encabezados del menú */
+
+.nav-header {
+    color: rgba(255,255,255,.45) !important;
+    font-size: 11px !important;
+    font-weight: 600 !important;
+    letter-spacing: 1.2px;
+}
+
+/* =========================
+   NAVBAR
+========================= */
+
+.main-header {
+    background: white !important;
+    border-bottom: none !important;
+    box-shadow: 0 3px 15px rgba(0,0,0,.04);
+}
+
+/* =========================
+   CARDS
+========================= */
+
+.card {
+    border: none !important;
+    border-radius: 18px !important;
+    box-shadow: 0 7px 25px rgba(18,63,55,.07) !important;
+}
+
+.card-header {
+    background: white !important;
+    border-bottom: none !important;
+}
+
+/* =========================
+   TITULOS
+========================= */
+
+.content-header h1 {
+    color: var(--nutri-text);
+    font-weight: 600;
+}
+
+/* =========================
+   BOTONES
+========================= */
+
+.btn-nutri {
+    background: var(--nutri-primary);
+    color: white;
+    border: none;
+    border-radius: 10px;
+}
+
+.btn-nutri:hover {
+    background: var(--nutri-dark);
+    color: white;
+}
+
+/* =========================
+   TARJETA VERDE
+========================= */
+
+.nutri-card {
+    background: linear-gradient(
+        135deg,
+        var(--nutri-dark),
+        var(--nutri-secondary)
+    );
+
+    color: white;
+    border-radius: 22px;
+    padding: 25px;
+}
+
+/* =========================
+   TARJETA LIMA
+========================= */
+
+.nutri-card-lime {
+    background: linear-gradient(
+        135deg,
+        #e8f269,
+        #d3e978
+    );
+
+    color: var(--nutri-dark);
+    border-radius: 22px;
+    padding: 25px;
+}
+/* =========================================================
+   NUTRIADMIN SIDEBAR - LIQUID GLASS
+========================================================= */
+
+/* SIDEBAR COMPLETO */
+.main-sidebar {
+    background:
+        linear-gradient(
+            180deg,
+            rgba(15, 38, 26, .97) 0%,
+            rgba(8, 24, 16, .98) 100%
+        ) !important;
+
+    border-right: 1px solid rgba(255,255,255,.07);
+
+    box-shadow:
+        10px 0 35px rgba(0,0,0,.18);
+
+    backdrop-filter: blur(26px);
+    -webkit-backdrop-filter: blur(26px);
+}
+
+
+/* =========================================================
+   LOGO / MARCA
+========================================================= */
+
+.brand-link {
+    height: 72px;
+
+    display: flex !important;
+    align-items: center;
+
+    padding: 0 18px !important;
+
+    border-bottom:
+        1px solid rgba(255,255,255,.07) !important;
+
+    background:
+        rgba(255,255,255,.025) !important;
+
+    text-decoration: none !important;
+}
+
+
+/* ICONO LOGO */
+
+.brand-link .brand-image {
+
+    width: 38px !important;
+    height: 38px !important;
+
+    margin: 0 11px 0 0 !important;
+
+    padding: 8px;
+
+    object-fit: contain;
+
+    border-radius: 13px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(174,211,160,.20),
+            rgba(255,255,255,.05)
+        );
+
+    border:
+        1px solid rgba(255,255,255,.13);
+
+    box-shadow:
+        inset 0 1px 0 rgba(255,255,255,.14),
+        0 8px 20px rgba(0,0,0,.14);
+}
+
+
+/* TEXTO NUTRIADMIN */
+
+.brand-link .brand-text {
+
+    color: #f1f8f3 !important;
+
+    font-family: 'Poppins', sans-serif;
+
+    font-size: 18px;
+
+    font-weight: 500 !important;
+
+    letter-spacing: -.4px;
+}
+
+
+/* =========================================================
+   CONTENEDOR DEL MENÚ
+========================================================= */
+
+.sidebar {
+
+    padding: 14px 11px 25px;
+
+}
+
+
+/* =========================================================
+   TÍTULOS: GESTIÓN / ADMINISTRACIÓN
+========================================================= */
+
+.nav-sidebar .nav-header {
+
+    margin-top: 14px !important;
+    margin-bottom: 7px !important;
+
+    padding:
+        5px
+        11px !important;
+
+    color:
+        rgba(180, 207, 186, .35) !important;
+
+    font-family:
+        'Poppins',
+        sans-serif;
+
+    font-size:
+        8px !important;
+
+    font-weight:
+        600 !important;
+
+    letter-spacing:
+        1.7px;
+
+    text-transform:
+        uppercase;
+}
+
+
+/* =========================================================
+   ITEMS
+========================================================= */
+
+.nav-sidebar .nav-item {
+
+    margin-bottom:
+        5px;
+
+}
+
+
+.nav-sidebar .nav-link {
+
+    min-height:
+        43px;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    border-radius:
+        13px !important;
+
+    padding:
+        10px 12px !important;
+
+    border:
+        1px solid transparent;
+
+    background:
+        transparent !important;
+
+    color:
+        rgba(226,238,229,.65) !important;
+
+    font-family:
+        'Poppins',
+        sans-serif;
+
+    font-size:
+        12px;
+
+    transition:
+        all .22s ease;
+}
+
+
+/* ICONOS */
+
+.nav-sidebar .nav-link .nav-icon {
+
+    width:
+        24px !important;
+
+    margin-right:
+        8px !important;
+
+    color:
+        rgba(166, 195, 171, .58) !important;
+
+    font-size:
+        14px !important;
+
+    transition:
+        .22s ease;
+
+}
+
+
+/* TEXTO */
+
+.nav-sidebar .nav-link p {
+
+    margin:
+        0;
+
+}
+
+
+/* =========================================================
+   HOVER
+========================================================= */
+
+.nav-sidebar .nav-link:hover {
+
+    transform:
+        translateX(3px);
+
+    color:
+        #eff8f1 !important;
+
+    border-color:
+        rgba(255,255,255,.08);
+
+    background:
+
+        linear-gradient(
+            135deg,
+            rgba(255,255,255,.075),
+            rgba(255,255,255,.025)
+        ) !important;
+
+    box-shadow:
+
+        inset 0 1px 0 rgba(255,255,255,.08),
+
+        0 8px 22px rgba(0,0,0,.08);
+
+}
+
+
+.nav-sidebar .nav-link:hover .nav-icon {
+
+    color:
+        #acd0a2 !important;
+
+}
+
+
+/* =========================================================
+   ELEMENTO ACTIVO
+========================================================= */
+
+.nav-sidebar .nav-link.active {
+
+    color:
+        #f3faf4 !important;
+
+    border:
+        1px solid rgba(172,209,163,.16);
+
+    background:
+
+        linear-gradient(
+            135deg,
+            rgba(151,194,145,.17),
+            rgba(255,255,255,.045)
+        ) !important;
+
+    box-shadow:
+
+        inset 0 1px 0 rgba(255,255,255,.11),
+
+        0 9px 25px rgba(0,0,0,.12) !important;
+
+}
+
+
+/* ICONO ACTIVO */
+
+.nav-sidebar .nav-link.active .nav-icon {
+
+    width:
+        28px !important;
+
+    height:
+        28px;
+
+    display:
+        inline-flex !important;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    margin-left:
+        -3px;
+
+    color:
+        #b5d5aa !important;
+
+    border-radius:
+        9px;
+
+    background:
+        rgba(159,201,153,.09);
+
+}
+
+
+/* PEQUEÑA LUZ DEL ITEM ACTIVO */
+
+.nav-sidebar .nav-link.active::before {
+
+    content: "";
+
+    position:
+        absolute;
+
+    left:
+        3px;
+
+    width:
+        3px;
+
+    height:
+        20px;
+
+    border-radius:
+        5px;
+
+    background:
+        #9dc799;
+
+    box-shadow:
+        0 0 12px rgba(157,199,153,.48);
+
+}
+
+
+/* IMPORTANTE PARA ::before */
+
+.nav-sidebar .nav-link {
+
+    position:
+        relative;
+
+}
+
+
+/* =========================================================
+   SUBMENÚ
+========================================================= */
+
+.nav-treeview {
+
+    padding-left:
+        8px;
+
+}
+
+
+.nav-treeview .nav-link {
+
+    min-height:
+        37px;
+
+    margin-left:
+        8px;
+
+    font-size:
+        10px;
+
+    color:
+        rgba(208,226,212,.45) !important;
+
+}
+
+
+.nav-treeview .nav-link.active {
+
+    color:
+        #b9d8b2 !important;
+
+}
+
+
+/* =========================================================
+   SCROLLBAR
+========================================================= */
+
+.sidebar::-webkit-scrollbar {
+
+    width:
+        4px;
+
+}
+
+
+.sidebar::-webkit-scrollbar-track {
+
+    background:
+        transparent;
+
+}
+
+
+.sidebar::-webkit-scrollbar-thumb {
+
+    border-radius:
+        10px;
+
+    background:
+        rgba(168,204,162,.14);
+
+}
+
+
+/* =========================================================
+   SIDEBAR COLAPSADO
+========================================================= */
+
+.sidebar-mini.sidebar-collapse
+.main-sidebar:hover {
+
+    box-shadow:
+        15px 0 45px rgba(0,0,0,.25);
+
+}
+
+
+/* =========================================================
+   AJUSTE DEL ICONO HAMBURGUESA / NAVBAR
+========================================================= */
+
+.main-header.navbar {
+
+    background:
+        rgba(8,24,16,.78) !important;
+
+    border-bottom:
+        1px solid rgba(255,255,255,.06) !important;
+
+    backdrop-filter:
+        blur(25px);
+
+    -webkit-backdrop-filter:
+        blur(25px);
+
+}
+
+
+.main-header .nav-link {
+
+    color:
+        rgba(228,240,230,.60) !important;
+
+}
+
+
+.main-header .nav-link:hover {
+
+    color:
+        #abd0a3 !important;
+
+}
