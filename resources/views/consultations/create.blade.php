@@ -3,311 +3,315 @@
 @section('title', 'Nueva consulta | NutriAdmin')
 
 
+{{-- =========================================================
+     CONTENT HEADER
+     ========================================================= --}}
 @section('content_header')
 
-<div class="d-flex justify-content-between align-items-center">
+    <div class="consultations-header">
 
-    <div>
+        <div>
+            <span class="consultation-eyebrow">
+                <i class="fas fa-leaf mr-1"></i>
+                NUTRIADMIN
+            </span>
 
-        <h1 class="mb-1">
-            Nueva consulta
-        </h1>
+            <h1>Nueva consulta</h1>
 
-        <p class="text-muted mb-0">
-            Registra la atención y recomendaciones del paciente.
-        </p>
+            <p>Registra la atención y recomendaciones del paciente.</p>
+        </div>
+
+        <a href="{{ route('consultas.index') }}" class="btn-consultation-primary">
+            <i class="fas fa-arrow-left"></i>
+            Regresar
+        </a>
 
     </div>
-
-
-    <a
-        href="{{ route('consultas.index') }}"
-        class="btn btn-light"
-    >
-
-        <i class="fas fa-arrow-left mr-1"></i>
-
-        Regresar
-
-    </a>
-
-</div>
 
 @stop
 
 
-
+{{-- =========================================================
+     CONTENT
+     ========================================================= --}}
 @section('content')
 
+    <div class="consultation-form-page">
 
-<form
-    method="POST"
-    action="{{ route('consultas.store') }}"
->
+        {{-- Luces ambientales --}}
+        <div class="ambient ambient-one"></div>
+        <div class="ambient ambient-two"></div>
+        <div class="ambient ambient-three"></div>
 
-    @csrf
+        <form method="POST" action="{{ route('consultas.store') }}" id="consultationForm">
 
+            @csrf
 
-    <div class="card">
+            <div class="form-glass-card">
 
-        <div class="card-body p-4">
-
-
-            <div class="row">
+                <div class="glass-shine"></div>
 
 
-                {{-- PACIENTE --}}
+                {{-- ENCABEZADO --}}
+                <div class="form-card-header">
 
-                <div class="col-md-6">
+                    <div class="form-heading">
+                        <div class="form-heading-icon">
+                            <i class="fas fa-stethoscope"></i>
+                        </div>
 
-                    <div class="form-group">
+                        <div>
+                            <span>REGISTRO CLÍNICO</span>
+                            <h3>Datos de la consulta</h3>
+                            <p>Registra la atención y recomendaciones para el paciente.</p>
+                        </div>
+                    </div>
 
-                        <label>
-                            Paciente *
-                        </label>
-
-                        <select
-                            name="patient_id"
-                            class="form-control"
-                            required
-                        >
-
-                            <option value="">
-                                Selecciona un paciente
-                            </option>
-
-                            @foreach($patients as $patient)
-
-                                <option
-                                    value="{{ $patient->id }}"
-                                    {{ old('patient_id') == $patient->id ? 'selected' : '' }}
-                                >
-
-                                    {{ $patient->first_name }}
-                                    {{ $patient->last_name }}
-
-                                </option>
-
-                            @endforeach
-
-                        </select>
-
+                    <div class="required-badge">
+                        <span>*</span>
+                        Campos obligatorios
                     </div>
 
                 </div>
 
 
+                {{-- ================================================
+                     PACIENTE Y FECHA
+                ================================================= --}}
+                <div class="form-section">
 
-                {{-- FECHA --}}
-
-                <div class="col-md-6">
-
-                    <div class="form-group">
-
-                        <label>
-                            Fecha y hora *
-                        </label>
-
-                        <input
-                            type="datetime-local"
-                            name="consultation_at"
-                            value="{{ old('consultation_at', now()->format('Y-m-d\TH:i')) }}"
-                            class="form-control"
-                            required
-                        >
-
+                    <div class="section-label">
+                        <span class="section-number">01</span>
+                        <div>
+                            <h4>Paciente y horario</h4>
+                            <p>¿A quién y cuándo fue la consulta?</p>
+                        </div>
                     </div>
 
-                </div>
+                    <div class="form-group">
+                        <label>Paciente *</label>
 
+                        <div class="liquid-input liquid-select">
+                            <span class="input-icon"><i class="far fa-user"></i></span>
 
+                            <select name="patient_id" required>
+                                <option value="">Selecciona un paciente</option>
 
-                {{-- CITA --}}
-
-                <div class="col-md-6">
+                                @foreach($patients as $patient)
+                                    <option
+                                        value="{{ $patient->id }}"
+                                        {{ old('patient_id') == $patient->id ? 'selected' : '' }}
+                                    >
+                                        {{ $patient->first_name }} {{ $patient->last_name }}
+                                    </option>
+                                @endforeach
+                            </select>
+                        </div>
+                    </div>
 
                     <div class="form-group">
+                        <label>Fecha y hora *</label>
 
-                        <label>
-                            Cita relacionada
-                        </label>
+                        <div class="liquid-input">
+                            <span class="input-icon"><i class="far fa-clock"></i></span>
 
-                        <select
-                            name="appointment_id"
-                            class="form-control"
-                        >
+                            <input
+                                type="datetime-local"
+                                name="consultation_at"
+                                value="{{ old('consultation_at', now()->format('Y-m-d\TH:i')) }}"
+                                required
+                            >
+                        </div>
+                    </div>
 
-                            <option value="">
-                                Ninguna
-                            </option>
+                    <div class="form-group">
+                        <label>Cita relacionada</label>
 
-                            @foreach($appointments as $appointment)
+                        <div class="liquid-input liquid-select">
+                            <span class="input-icon"><i class="far fa-calendar-check"></i></span>
 
-                                <option
-                                    value="{{ $appointment->id }}"
-                                    {{ old('appointment_id') == $appointment->id ? 'selected' : '' }}
-                                >
+                            <select name="appointment_id">
+                                <option value="">Ninguna</option>
 
-                                    {{ $appointment->patient->first_name }}
-                                    {{ $appointment->patient->last_name }}
+                                @foreach($appointments as $appointment)
+                                    <option
+                                        value="{{ $appointment->id }}"
+                                        {{ old('appointment_id') == $appointment->id ? 'selected' : '' }}
+                                    >
+                                        {{ $appointment->patient->first_name }}
+                                        {{ $appointment->patient->last_name }}
+                                        —
+                                        {{ $appointment->appointment_at->format('d/m/Y H:i') }}
+                                    </option>
+                                @endforeach
+                            </select>
+                        </div>
 
-                                    —
-
-                                    {{ $appointment->appointment_at->format('d/m/Y H:i') }}
-
-                                </option>
-
-                            @endforeach
-
-                        </select>
-
-                        <small class="text-muted">
-
-                            Opcional. Si seleccionas una cita,
-                            se marcará como completada.
-
+                        <small class="field-hint">
+                            Opcional. Si seleccionas una cita, se marcará como completada.
                         </small>
-
                     </div>
 
                 </div>
 
 
+                {{-- ================================================
+                     MOTIVO Y SEGUIMIENTO
+                ================================================= --}}
+                <div class="form-section">
 
-                {{-- MOTIVO --}}
-
-                <div class="col-md-6">
+                    <div class="section-label">
+                        <span class="section-number">02</span>
+                        <div>
+                            <h4>Motivo y seguimiento</h4>
+                            <p>Contexto general de la consulta.</p>
+                        </div>
+                    </div>
 
                     <div class="form-group">
+                        <label>Motivo</label>
 
-                        <label>
-                            Motivo
-                        </label>
+                        <div class="liquid-input">
+                            <span class="input-icon"><i class="far fa-comment-dots"></i></span>
 
-                        <input
-                            type="text"
-                            name="reason"
-                            value="{{ old('reason') }}"
-                            class="form-control"
-                            placeholder="Ej. Seguimiento mensual"
-                        >
-
+                            <input
+                                type="text"
+                                name="reason"
+                                value="{{ old('reason') }}"
+                                placeholder="Ej. Seguimiento mensual"
+                            >
+                        </div>
                     </div>
-
-                </div>
-
-
-
-                {{-- OBSERVACIONES --}}
-
-                <div class="col-md-12">
 
                     <div class="form-group">
+                        <label>Próxima consulta</label>
 
-                        <label>
-                            Observaciones
-                        </label>
+                        <div class="liquid-input">
+                            <span class="input-icon"><i class="far fa-calendar-plus"></i></span>
 
-                        <textarea
-                            name="observations"
-                            rows="5"
-                            class="form-control"
-                            placeholder="Describe cómo se encuentra el paciente, adherencia, síntomas, cambios..."
-                        >{{ old('observations') }}</textarea>
-
+                            <input type="date" name="next_visit" value="{{ old('next_visit') }}">
+                        </div>
                     </div>
 
                 </div>
 
 
+                {{-- ================================================
+                     OBSERVACIONES
+                ================================================= --}}
+                <div class="form-section">
 
-                {{-- RECOMENDACIONES --}}
-
-                <div class="col-md-12">
+                    <div class="section-label">
+                        <span class="section-number">03</span>
+                        <div>
+                            <h4>Observaciones</h4>
+                            <p>¿Cómo se encuentra el paciente?</p>
+                        </div>
+                    </div>
 
                     <div class="form-group">
+                        <div class="liquid-textarea">
+                            <span class="textarea-icon"><i class="far fa-file-alt"></i></span>
 
-                        <label>
-                            Recomendaciones
-                        </label>
+                            <textarea
+                                name="observations"
+                                rows="5"
+                                placeholder="Describe cómo se encuentra el paciente, adherencia, síntomas, cambios..."
+                                id="observationsField"
+                            >{{ old('observations') }}</textarea>
 
-                        <textarea
-                            name="recommendations"
-                            rows="5"
-                            class="form-control"
-                            placeholder="Indicaciones para el paciente..."
-                        >{{ old('recommendations') }}</textarea>
-
+                            <span class="character-counter" id="observationsCount">0</span>
+                        </div>
                     </div>
 
                 </div>
 
 
+                {{-- ================================================
+                     RECOMENDACIONES
+                ================================================= --}}
+                <div class="form-section last-section">
 
-                {{-- PRÓXIMA CONSULTA --}}
-
-                <div class="col-md-6">
+                    <div class="section-label">
+                        <span class="section-number">04</span>
+                        <div>
+                            <h4>Recomendaciones</h4>
+                            <p>Indicaciones para el paciente.</p>
+                        </div>
+                    </div>
 
                     <div class="form-group">
+                        <div class="liquid-textarea">
+                            <span class="textarea-icon"><i class="far fa-lightbulb"></i></span>
 
-                        <label>
-                            Próxima consulta
-                        </label>
+                            <textarea
+                                name="recommendations"
+                                rows="5"
+                                placeholder="Indicaciones para el paciente..."
+                                id="recommendationsField"
+                            >{{ old('recommendations') }}</textarea>
 
-                        <input
-                            type="date"
-                            name="next_visit"
-                            value="{{ old('next_visit') }}"
-                            class="form-control"
-                        >
-
+                            <span class="character-counter" id="recommendationsCount">0</span>
+                        </div>
                     </div>
 
                 </div>
 
+
+                {{-- ACCIONES --}}
+                <div class="form-actions">
+
+                    <a href="{{ route('consultas.index') }}" class="btn-cancel-liquid">
+                        Cancelar
+                    </a>
+
+                    <button type="submit" class="btn-save-liquid">
+                        <span class="save-text">
+                            <i class="far fa-save"></i>
+                            Guardar consulta
+                        </span>
+
+                        <span class="save-arrow">
+                            <i class="fas fa-arrow-right"></i>
+                        </span>
+                    </button>
+
+                </div>
 
             </div>
 
-        </div>
-
-
-
-        <div class="card-footer text-right">
-
-            <a
-                href="{{ route('consultas.index') }}"
-                class="btn btn-light"
-            >
-                Cancelar
-            </a>
-
-
-            <button
-                type="submit"
-                class="btn btn-success ml-2"
-            >
-
-                <i class="fas fa-save mr-1"></i>
-
-                Guardar consulta
-
-            </button>
-
-        </div>
+        </form>
 
     </div>
-
-
-</form>
 
 @stop
 
 
+{{-- =========================================================
+     ESTILOS
+     ========================================================= --}}
 @section('css')
 
-<link
-    rel="stylesheet"
-    href="{{ asset('css/nutriadmin.css') }}"
->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+    @vite(['resources/css/nutriadmin.css'])
+
+@stop
+
+
+{{-- =========================================================
+     SCRIPTS
+     ========================================================= --}}
+@section('js')
+
+    @vite(['resources/js/pages/consultations-create.js'])
 
 @stop

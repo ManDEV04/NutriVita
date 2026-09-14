@@ -164,41 +164,8 @@
 
 
 
-    <script>
-
-        const menuButton =
-            document.getElementById('mobileMenuButton');
-
-        const nav =
-            document.getElementById('landingNav');
-
-
-        menuButton?.addEventListener(
-            'click',
-            function () {
-
-                nav.classList.toggle('active');
-
-            }
-        );
-
-
-        window.addEventListener(
-            'scroll',
-            function () {
-
-                const navbar =
-                    document.querySelector('.landing-navbar');
-
-                navbar.classList.toggle(
-                    'scrolled',
-                    window.scrollY > 20
-                );
-
-            }
-        );
-
-    </script>
+    {{-- Menú móvil y navbar en scroll — ver resources/js/pages/marketing.js --}}
+    @vite(['resources/js/pages/marketing.js'])
 
 
     @yield('js')

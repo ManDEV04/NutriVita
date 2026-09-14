@@ -5,10 +5,36 @@ export default defineConfig({
     plugins: [
         laravel({
             input: [
+                // Base
                 'resources/css/app.css',
-                'resources/css/nutriadmin.css',
                 'resources/js/app.js',
+
+                // Dashboard
+                'resources/css/nutriadmin.css',
                 'resources/js/dashboard.js',
+
+                // Pacientes
+                'resources/js/pages/patients-index.js',
+                'resources/js/pages/patients-create.js',
+                'resources/js/pages/patients-edit.js',
+                'resources/js/pages/patients-show.js',
+
+                // Citas
+                'resources/js/pages/appointments-index.js',
+                'resources/js/pages/appointments-create.js',
+
+                // Consultas
+                'resources/js/pages/consultations-create.js',
+
+                // Evaluaciones
+                'resources/js/pages/evaluations-create.js',
+
+                // Progreso
+                'resources/js/pages/progress-show.js',
+
+                // Marketing / Auth
+                'resources/js/pages/marketing.js',
+                'resources/js/pages/auth-login.js',
             ],
             refresh: true,
         }),
