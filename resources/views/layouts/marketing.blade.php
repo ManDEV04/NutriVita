@@ -102,7 +102,7 @@
                 @auth
 
                     <a
-                        href="{{ route('dashboard') }}"
+                        href="{{ route('dashboard.index') }}"
                         class="nav-login"
                     >
                         Ir al panel

@@ -16,7 +16,7 @@ class DashboardController extends Controller
             ->where('active', true)
             ->count();
 
-        return view('dashboard', compact(
+        return view('dashboard.index', compact(
             'totalPatients',
             'activePatients'
         ));
