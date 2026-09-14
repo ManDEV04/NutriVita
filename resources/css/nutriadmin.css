@@ -1,4 +1,105 @@
 /* =============================================================
+   TEMA — VARIABLES (claro / oscuro)
+   -------------------------------------------------------------
+   Estas variables viven en :root (oscuro, el actual) y se
+   sobrescriben por completo en [data-theme="light"]. El atributo
+   data-theme lo pone/quita el botón de tema — ver
+   resources/js/theme.js y resources/views/partials/theme-toggle.blade.php
+
+   IMPORTANTE: "glassmorphism" (tarjetas blancas translúcidas sobre
+   fondo oscuro) no se puede invertir mecánicamente a claro — una
+   tarjeta blanca al 5% de opacidad sobre fondo blanco es invisible.
+   Por eso el tema claro usa tarjetas SÓLIDAS con sombra suave en
+   vez de "vidrio", en lugar de solo invertir los mismos valores.
+============================================================= */
+
+:root,
+[data-theme="dark"] {
+
+    /* Fondo de página */
+    --page-bg:
+        radial-gradient(circle at 12% 12%, rgba(62,117,82,.22), transparent 28%),
+        radial-gradient(circle at 91% 40%, rgba(106,164,112,.14), transparent 28%),
+        linear-gradient(135deg, #08170f 0%, #10251a 48%, #081810 100%);
+
+    /* Texto */
+    --text-primary: #f4faf5;
+    --text-secondary: rgba(220,235,223,.62);
+    --text-muted: rgba(210,229,214,.38);
+    --text-faint: rgba(200,222,205,.30);
+
+    /* Tarjetas "glass" */
+    --card-bg: linear-gradient(145deg, rgba(255,255,255,.082), rgba(255,255,255,.022));
+    --card-bg-soft: linear-gradient(145deg, rgba(255,255,255,.07), rgba(255,255,255,.018));
+    --card-border: rgba(255,255,255,.11);
+    --card-border-soft: rgba(255,255,255,.08);
+    --card-shadow: 0 20px 45px rgba(0,0,0,.16);
+    --card-blur: blur(24px) saturate(140%);
+    --card-inset-highlight: inset 0 1px 0 rgba(255,255,255,.13);
+
+    /* Inputs */
+    --input-bg: rgba(255,255,255,.035);
+    --input-bg-focus: rgba(255,255,255,.055);
+    --input-border: rgba(255,255,255,.095);
+    --input-text: #edf7ef;
+    --input-placeholder: rgba(204,224,208,.23);
+
+    /* Acento (verde de marca) */
+    --accent: #9fc99a;
+    --accent-strong: #7fb377;
+    --accent-soft-bg: rgba(143,188,137,.09);
+    --accent-text-on-soft: #9fc298;
+
+    /* Decoración ambiental (blobs difuminados) */
+    --ambient-opacity: .20;
+
+    /* Iconos/scrollbars nativos del navegador */
+    --native-color-scheme: dark;
+}
+
+[data-theme="light"] {
+
+    /* Fondo de página — degradado claro, no invertido */
+    --page-bg:
+        radial-gradient(circle at 12% 8%, rgba(143,188,137,.16), transparent 32%),
+        radial-gradient(circle at 90% 35%, rgba(143,188,137,.10), transparent 30%),
+        linear-gradient(160deg, #f5faf6 0%, #eef6f0 55%, #e9f2eb 100%);
+
+    /* Texto */
+    --text-primary: #16281c;
+    --text-secondary: rgba(22,40,28,.68);
+    --text-muted: rgba(22,40,28,.46);
+    --text-faint: rgba(22,40,28,.36);
+
+    /* Tarjetas — sólidas, no "vidrio" */
+    --card-bg: #ffffff;
+    --card-bg-soft: #ffffff;
+    --card-border: rgba(20,45,28,.09);
+    --card-border-soft: rgba(20,45,28,.07);
+    --card-shadow: 0 12px 30px rgba(20,45,28,.09);
+    --card-blur: none;
+    --card-inset-highlight: none;
+
+    /* Inputs */
+    --input-bg: #ffffff;
+    --input-bg-focus: #ffffff;
+    --input-border: rgba(20,45,28,.16);
+    --input-text: #16281c;
+    --input-placeholder: rgba(22,40,28,.32);
+
+    /* Acento — mismo verde de marca, ajustado para contraste en claro */
+    --accent: #4b8f56;
+    --accent-strong: #3a7645;
+    --accent-soft-bg: rgba(75,143,86,.10);
+    --accent-text-on-soft: #3a7645;
+
+    --ambient-opacity: .08;
+
+    --native-color-scheme: light;
+}
+
+
+/* =============================================================
    NUTRIADMIN — DASHBOARD
    Estilos del panel principal (resources/views/dashboard/*)
 ============================================================= */
@@ -8,16 +109,22 @@
 ------------------------------------------------------------- */
 body {
     font-family: 'Poppins', sans-serif;
-    background:
-        radial-gradient(circle at 12% 12%, rgba(62, 117, 82, .22), transparent 28%),
-        radial-gradient(circle at 91% 40%, rgba(106, 164, 112, .14), transparent 28%),
-        linear-gradient(135deg, #08170f 0%, #10251a 48%, #081810 100%) !important;
+    background: var(--page-bg) !important;
     background-attachment: fixed !important;
+    color-scheme: var(--native-color-scheme);
+    transition: background .3s ease;
 }
 
 .content-wrapper,
 .content-header {
     background: transparent !important;
+}
+
+/* Navbar de AdminLTE — mismo fondo degradado de la página, no gris */
+.app-header {
+    background: transparent !important;
+    border-bottom: 1px solid var(--card-border-soft) !important;
+    box-shadow: none !important;
 }
 
 .dashboard-background {
@@ -31,7 +138,7 @@ body {
     pointer-events: none;
     border-radius: 50%;
     filter: blur(100px);
-    opacity: .20;
+    opacity: var(--ambient-opacity);
 }
 
 .dashboard-background__blob--one {
@@ -70,6 +177,47 @@ body {
 
 
 /* -------------------------------------------------------------
+   THEME TOGGLE (botón claro/oscuro — reusable en todo el sitio)
+   Ver resources/views/partials/theme-toggle.blade.php
+------------------------------------------------------------- */
+.theme-toggle-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 9px 14px;
+    border-radius: 999px;
+    border: 1px solid var(--card-border-soft);
+    background: var(--card-bg-soft);
+    backdrop-filter: var(--card-blur);
+    color: var(--text-secondary);
+    font-family: 'Poppins', sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    line-height: 1;
+    cursor: pointer;
+    transition: .2s;
+}
+
+.theme-toggle-btn:hover {
+    border-color: var(--accent);
+    color: var(--text-primary);
+}
+
+.theme-toggle-btn i {
+    font-size: 12px;
+    color: var(--accent);
+}
+
+.theme-toggle-btn--icon-only {
+    padding: 9px;
+}
+
+.theme-toggle-btn--icon-only span {
+    display: none;
+}
+
+
+/* -------------------------------------------------------------
    HEADER
 ------------------------------------------------------------- */
 .dashboard-header {
@@ -93,7 +241,7 @@ body {
 .dashboard-header__eyebrow {
     display: block;
     margin-bottom: 5px;
-    color: #8db398;
+    color: var(--accent);
     font-size: 9px;
     font-weight: 600;
     letter-spacing: 2px;
@@ -102,7 +250,7 @@ body {
 
 .dashboard-header__title {
     margin: 0;
-    color: #f4faf5;
+    color: var(--text-primary);
     font-size: 30px;
     font-weight: 500;
     letter-spacing: -.7px;
@@ -110,7 +258,7 @@ body {
 
 .dashboard-header__date {
     margin: 6px 0 0;
-    color: rgba(220, 235, 223, .48);
+    color: var(--text-secondary);
     font-size: 12px;
 }
 
@@ -120,10 +268,10 @@ body {
     gap: 9px;
     padding: 10px 15px;
     border-radius: 15px;
-    border: 1px solid rgba(255, 255, 255, .10);
-    background: rgba(255, 255, 255, .045);
-    backdrop-filter: blur(18px);
-    color: rgba(238, 247, 240, .75);
+    border: 1px solid var(--card-border-soft);
+    background: var(--card-bg-soft);
+    backdrop-filter: var(--card-blur);
+    color: var(--text-secondary);
     font-size: 10px;
     font-weight: 500;
 }
@@ -140,13 +288,11 @@ body {
     margin-bottom: 18px;
     padding: 32px 40px;
     border-radius: 27px;
-    border: 1px solid rgba(255, 255, 255, .14);
-    background: linear-gradient(135deg, rgba(255, 255, 255, .105), rgba(255, 255, 255, .025));
-    backdrop-filter: blur(28px) saturate(145%);
-    -webkit-backdrop-filter: blur(28px) saturate(145%);
-    box-shadow:
-        inset 0 1px 0 rgba(255, 255, 255, .17),
-        0 25px 55px rgba(0, 0, 0, .20);
+    border: 1px solid var(--card-border);
+    background: var(--card-bg);
+    backdrop-filter: var(--card-blur);
+    -webkit-backdrop-filter: var(--card-blur);
+    box-shadow: var(--card-inset-highlight), var(--card-shadow);
 }
 
 .dashboard-hero__decoration {
@@ -201,7 +347,7 @@ body {
 }
 
 .dashboard-hero__eyebrow {
-    color: #90b497;
+    color: var(--accent);
     font-size: 9px;
     letter-spacing: 1.8px;
     text-transform: uppercase;
@@ -209,7 +355,7 @@ body {
 
 .dashboard-hero__title {
     margin: 6px 0 8px;
-    color: #f3faf5;
+    color: var(--text-primary);
     font-size: 32px;
     font-weight: 400;
 }
@@ -217,7 +363,7 @@ body {
 .dashboard-hero__description {
     max-width: 540px;
     margin: 0;
-    color: rgba(220, 236, 223, .52);
+    color: var(--text-secondary);
     font-size: 12px;
     line-height: 1.7;
 }
@@ -269,13 +415,13 @@ body {
 }
 
 .dashboard-hero__progress-info strong {
-    color: #eef7f0;
+    color: var(--text-primary);
     font-size: 12px;
     font-weight: 500;
 }
 
 .dashboard-hero__progress-info span {
-    color: rgba(215, 232, 218, .5);
+    color: var(--text-secondary);
     font-size: 10px;
 }
 
@@ -325,12 +471,10 @@ body {
     padding: 19px;
     min-height: 174px;
     border-radius: 22px;
-    border: 1px solid rgba(255, 255, 255, .105);
-    background: linear-gradient(145deg, rgba(255, 255, 255, .082), rgba(255, 255, 255, .022));
-    backdrop-filter: blur(22px);
-    box-shadow:
-        inset 0 1px 0 rgba(255, 255, 255, .12),
-        0 15px 35px rgba(0, 0, 0, .12);
+    border: 1px solid var(--card-border);
+    background: var(--card-bg);
+    backdrop-filter: var(--card-blur);
+    box-shadow: var(--card-inset-highlight), var(--card-shadow);
     transition: .25s;
 }
 
@@ -404,7 +548,7 @@ body {
     position: relative;
     z-index: 2;
     display: block;
-    color: rgba(218, 234, 221, .42);
+    color: var(--text-secondary);
     font-size: 9px;
 }
 
@@ -412,7 +556,7 @@ body {
     position: relative;
     z-index: 2;
     margin: 4px 0;
-    color: #f1f9f3;
+    color: var(--text-primary);
     font-size: 28px;
     font-weight: 500;
 }
@@ -427,12 +571,12 @@ body {
     display: flex;
     justify-content: space-between;
     margin-top: 8px;
-    color: rgba(214, 231, 217, .34);
+    color: var(--text-muted);
     font-size: 8px;
 }
 
 .metric-card__footer strong {
-    color: #9fc298;
+    color: var(--accent-text-on-soft);
     font-weight: 500;
 }
 
@@ -482,12 +626,10 @@ body {
     overflow: hidden;
     padding: 24px;
     border-radius: 25px;
-    border: 1px solid rgba(255, 255, 255, .105);
-    background: linear-gradient(145deg, rgba(255, 255, 255, .075), rgba(255, 255, 255, .02));
-    backdrop-filter: blur(24px) saturate(135%);
-    box-shadow:
-        inset 0 1px 0 rgba(255, 255, 255, .12),
-        0 18px 40px rgba(0, 0, 0, .13);
+    border: 1px solid var(--card-border);
+    background: var(--card-bg);
+    backdrop-filter: var(--card-blur);
+    box-shadow: var(--card-inset-highlight), var(--card-shadow);
 }
 
 .dashboard-chart-card::before {
@@ -514,7 +656,7 @@ body {
 .dashboard-chart-card__eyebrow {
     display: block;
     margin-bottom: 4px;
-    color: rgba(180, 209, 185, .38);
+    color: var(--text-muted);
     font-size: 8px;
     letter-spacing: 1.5px;
     text-transform: uppercase;
@@ -522,7 +664,7 @@ body {
 
 .dashboard-chart-card__title {
     margin: 0;
-    color: #eef7f0;
+    color: var(--text-primary);
     font-size: 17px;
     font-weight: 500;
 }
@@ -535,8 +677,8 @@ body {
     align-items: center;
     justify-content: center;
     border-radius: 13px;
-    background: rgba(142, 186, 137, .09);
-    color: #9fc298;
+    background: var(--accent-soft-bg);
+    color: var(--accent-text-on-soft);
     font-size: 14px;
 }
 
@@ -570,10 +712,10 @@ body {
     z-index: 2;
     padding: 23px;
     border-radius: 24px;
-    border: 1px solid rgba(255, 255, 255, .10);
-    background: linear-gradient(145deg, rgba(255, 255, 255, .07), rgba(255, 255, 255, .018));
-    backdrop-filter: blur(22px);
-    box-shadow: 0 16px 35px rgba(0, 0, 0, .11);
+    border: 1px solid var(--card-border-soft);
+    background: var(--card-bg-soft);
+    backdrop-filter: var(--card-blur);
+    box-shadow: var(--card-shadow);
 }
 
 /* Encabezado de sección (usado por resumen y accesos rápidos) */
@@ -588,7 +730,7 @@ body {
 .dashboard-summary__eyebrow,
 .dashboard-section-heading__eyebrow {
     display: block;
-    color: rgba(190, 214, 194, .32);
+    color: var(--text-muted);
     font-size: 7px;
     letter-spacing: 1.4px;
     text-transform: uppercase;
@@ -597,7 +739,7 @@ body {
 .dashboard-summary__title,
 .dashboard-section-heading__title {
     margin: 3px 0 0;
-    color: #eef7f0;
+    color: var(--text-primary);
     font-size: 16px;
     font-weight: 500;
 }
@@ -610,8 +752,8 @@ body {
     align-items: center;
     justify-content: center;
     border-radius: 13px;
-    background: rgba(142, 186, 137, .09);
-    color: #9fc298;
+    background: var(--accent-soft-bg);
+    color: var(--accent-text-on-soft);
 }
 
 
@@ -628,7 +770,7 @@ body {
     align-items: center;
     gap: 12px;
     padding: 14px 0;
-    border-top: 1px solid rgba(255, 255, 255, .05);
+    border-top: 1px solid var(--card-border-soft);
 }
 
 .dashboard-summary__item:first-child {
@@ -644,13 +786,13 @@ body {
     align-items: center;
     justify-content: center;
     border-radius: 13px;
-    background: rgba(143, 188, 137, .08);
-    color: #97bc92;
+    background: var(--accent-soft-bg);
+    color: var(--accent-text-on-soft);
 }
 
 .dashboard-summary__item strong {
     display: block;
-    color: rgba(235, 245, 237, .82);
+    color: var(--text-primary);
     font-size: 13px;
     font-weight: 500;
 }
@@ -658,7 +800,7 @@ body {
 .dashboard-summary__item span {
     display: block;
     margin-top: 2px;
-    color: rgba(208, 226, 212, .40);
+    color: var(--text-muted);
     font-size: 10px;
 }
 
@@ -678,9 +820,9 @@ body {
     gap: 12px;
     padding: 14px;
     border-radius: 17px;
-    border: 1px solid rgba(255, 255, 255, .07);
-    background: rgba(255, 255, 255, .028);
-    color: rgba(222, 237, 225, .85) !important;
+    border: 1px solid var(--card-border-soft);
+    background: var(--input-bg);
+    color: var(--text-secondary) !important;
     text-decoration: none !important;
     transition: .24s;
 }
@@ -688,8 +830,8 @@ body {
 .quick-action-card:hover {
     transform: translateY(-3px);
     border-color: rgba(169, 208, 161, .18);
-    background: rgba(143, 188, 137, .09);
-    color: #e7f4e9 !important;
+    background: var(--accent-soft-bg);
+    color: var(--text-primary) !important;
 }
 
 .quick-action-card__icon {
@@ -700,8 +842,8 @@ body {
     align-items: center;
     justify-content: center;
     border-radius: 13px;
-    background: rgba(140, 186, 135, .09);
-    color: #9ec297;
+    background: var(--accent-soft-bg);
+    color: var(--accent-text-on-soft);
     font-size: 13px;
 }
 
@@ -714,24 +856,24 @@ body {
 .quick-action-card__content strong {
     font-size: 11px;
     font-weight: 500;
-    color: #eef7f0;
+    color: var(--text-primary);
 }
 
 .quick-action-card__content small {
     margin-top: 2px;
     font-size: 9px;
-    color: rgba(211, 229, 215, .45);
+    color: var(--text-muted);
 }
 
 .quick-action-card__arrow {
     font-size: 10px;
-    color: rgba(211, 229, 215, .35);
+    color: var(--text-muted);
     transition: .24s;
 }
 
 .quick-action-card:hover .quick-action-card__arrow {
     transform: translateX(3px);
-    color: #b8d7b1;
+    color: var(--accent-strong);
 }
 
 
@@ -747,9 +889,9 @@ body {
     gap: 20px;
     padding: 17px 20px;
     border-radius: 19px;
-    border: 1px solid rgba(255, 255, 255, .08);
-    background: rgba(255, 255, 255, .026);
-    backdrop-filter: blur(18px);
+    border: 1px solid var(--card-border-soft);
+    background: var(--card-bg-soft);
+    backdrop-filter: var(--card-blur);
 }
 
 .dashboard-footer__brand {
@@ -766,20 +908,20 @@ body {
     align-items: center;
     justify-content: center;
     border-radius: 13px;
-    background: rgba(142, 187, 137, .09);
-    color: #9bc195;
+    background: var(--accent-soft-bg);
+    color: var(--accent-text-on-soft);
 }
 
 .dashboard-footer__brand strong {
     display: block;
-    color: rgba(238, 247, 240, .9);
+    color: var(--text-primary);
     font-size: 12px;
 }
 
 .dashboard-footer__brand span {
     display: block;
     margin-top: 2px;
-    color: rgba(211, 229, 215, .40);
+    color: var(--text-muted);
     font-size: 9px;
 }
 
@@ -792,7 +934,7 @@ body {
 
 .dashboard-footer__status strong {
     display: block;
-    color: rgba(220, 235, 223, .75);
+    color: var(--text-secondary);
     font-size: 10px;
     font-weight: 500;
 }
@@ -800,12 +942,12 @@ body {
 .dashboard-footer__status span {
     display: block;
     margin-top: 1px;
-    color: rgba(210, 229, 214, .40);
+    color: var(--text-muted);
     font-size: 9px;
 }
 
 .dashboard-footer__version {
-    color: rgba(190, 214, 194, .35);
+    color: var(--text-muted);
     font-size: 9px;
     letter-spacing: .5px;
 }
@@ -910,24 +1052,8 @@ body {
 ========================================================= */
 
 body {
-    background:
-        radial-gradient(
-            circle at 15% 10%,
-            rgba(54, 104, 75, .20),
-            transparent 28%
-        ),
-        radial-gradient(
-            circle at 90% 35%,
-            rgba(99, 152, 105, .12),
-            transparent 28%
-        ),
-        linear-gradient(
-            135deg,
-            #091710 0%,
-            #10241a 45%,
-            #0a1912 100%
-        ) !important;
-
+    font-family: 'Poppins', sans-serif;
+    background: var(--page-bg) !important;
     background-attachment: fixed !important;
 }
 
@@ -2635,32 +2761,9 @@ body {
 ========================================================= */
 
 body {
-
     font-family: 'Poppins', sans-serif;
-
-    background:
-
-        radial-gradient(
-            circle at 12% 12%,
-            rgba(62,117,82,.22),
-            transparent 28%
-        ),
-
-        radial-gradient(
-            circle at 92% 42%,
-            rgba(103,162,111,.14),
-            transparent 28%
-        ),
-
-        linear-gradient(
-            135deg,
-            #08170f 0%,
-            #10251a 48%,
-            #081810 100%
-        ) !important;
-
+    background: var(--page-bg) !important;
     background-attachment: fixed !important;
-
 }
 
 
@@ -4382,27 +4485,8 @@ body {
 
 
 body {
-
     font-family: 'Poppins', sans-serif;
-
-    background:
-        radial-gradient(
-            circle at 12% 12%,
-            rgba(62,117,82,.22),
-            transparent 28%
-        ),
-        radial-gradient(
-            circle at 92% 42%,
-            rgba(103,162,111,.14),
-            transparent 28%
-        ),
-        linear-gradient(
-            135deg,
-            #08170f,
-            #10251a 48%,
-            #081810
-        ) !important;
-
+    background: var(--page-bg) !important;
     background-attachment: fixed !important;
 }
 
@@ -5681,32 +5765,9 @@ body {
 ========================================================= */
 
 body {
-
     font-family: 'Poppins', sans-serif;
-
-    background:
-
-        radial-gradient(
-            circle at 12% 12%,
-            rgba(62,117,82,.22),
-            transparent 28%
-        ),
-
-        radial-gradient(
-            circle at 92% 42%,
-            rgba(103,162,111,.14),
-            transparent 28%
-        ),
-
-        linear-gradient(
-            135deg,
-            #08170f 0%,
-            #10251a 48%,
-            #081810 100%
-        ) !important;
-
+    background: var(--page-bg) !important;
     background-attachment: fixed !important;
-
 }
 
 
@@ -7621,43 +7682,9 @@ body {
 
 
 body {
-
-    background:
-
-        radial-gradient(
-
-            circle at 12% 15%,
-
-            rgba(62, 117, 82, .22),
-
-            transparent 29%
-
-        ),
-
-        radial-gradient(
-
-            circle at 92% 40%,
-
-            rgba(108, 166, 113, .15),
-
-            transparent 30%
-
-        ),
-
-        linear-gradient(
-
-            135deg,
-
-            #08170f 0%,
-
-            #10251a 48%,
-
-            #091911 100%
-
-        ) !important;
-
+    font-family: 'Poppins', sans-serif;
+    background: var(--page-bg) !important;
     background-attachment: fixed !important;
-
 }
 
 
@@ -9788,29 +9815,9 @@ body {
 ========================================================= */
 
 body {
-
     font-family: 'Poppins', sans-serif;
-
-    background:
-        radial-gradient(
-            circle at 12% 12%,
-            rgba(62,117,82,.22),
-            transparent 28%
-        ),
-        radial-gradient(
-            circle at 92% 42%,
-            rgba(103,162,111,.14),
-            transparent 28%
-        ),
-        linear-gradient(
-            135deg,
-            #08170f 0%,
-            #10251a 48%,
-            #081810 100%
-        ) !important;
-
+    background: var(--page-bg) !important;
     background-attachment: fixed !important;
-
 }
 
 
@@ -11592,28 +11599,9 @@ body {
 
 
 body {
-
-    background:
-
-        radial-gradient(
-            circle at 14% 12%,
-            rgba(66,121,81,.20),
-            transparent 30%
-        ),
-
-        radial-gradient(
-            circle at 88% 45%,
-            rgba(85,145,123,.12),
-            transparent 30%
-        ),
-
-        linear-gradient(
-            135deg,
-            #08170f,
-            #10251a,
-            #091911
-        ) !important;
-
+    font-family: 'Poppins', sans-serif;
+    background: var(--page-bg) !important;
+    background-attachment: fixed !important;
 }
 
 .content-wrapper {
@@ -12097,19 +12085,9 @@ body {
 
 
 body {
-
-    background:
-        radial-gradient(
-            circle at 15% 10%,
-            rgba(75,120,84,.20),
-            transparent 30%
-        ),
-        linear-gradient(
-            135deg,
-            #08170f,
-            #10251a,
-            #091911
-        ) !important;
+    font-family: 'Poppins', sans-serif;
+    background: var(--page-bg) !important;
+    background-attachment: fixed !important;
 }
 
 
@@ -12642,28 +12620,8 @@ body {
 ========================================================= */
 
 body {
-
-    background:
-
-        radial-gradient(
-            circle at 12% 15%,
-            rgba(62, 117, 82, .22),
-            transparent 29%
-        ),
-
-        radial-gradient(
-            circle at 92% 40%,
-            rgba(108, 166, 113, .15),
-            transparent 30%
-        ),
-
-        linear-gradient(
-            135deg,
-            #08170f 0%,
-            #10251a 48%,
-            #091911 100%
-        ) !important;
-
+    font-family: 'Poppins', sans-serif;
+    background: var(--page-bg) !important;
     background-attachment: fixed !important;
 }
 
@@ -13542,32 +13500,9 @@ input[type="datetime-local"] {
 ========================================================= */
 
 body {
-
     font-family: 'Poppins', sans-serif;
-
-    background:
-
-        radial-gradient(
-            circle at 12% 12%,
-            rgba(62,117,82,.22),
-            transparent 28%
-        ),
-
-        radial-gradient(
-            circle at 92% 42%,
-            rgba(103,162,111,.14),
-            transparent 28%
-        ),
-
-        linear-gradient(
-            135deg,
-            #08170f 0%,
-            #10251a 48%,
-            #081810 100%
-        ) !important;
-
+    background: var(--page-bg) !important;
     background-attachment: fixed !important;
-
 }
 
 
@@ -15361,28 +15296,9 @@ body {
 ========================================================= */
 
 body {
-
-    background:
-
-        radial-gradient(
-            circle at 14% 12%,
-            rgba(65, 121, 81, .20),
-            transparent 30%
-        ),
-
-        radial-gradient(
-            circle at 88% 48%,
-            rgba(93, 151, 99, .12),
-            transparent 28%
-        ),
-
-        linear-gradient(
-            135deg,
-            #08170f,
-            #10251a,
-            #091911
-        ) !important;
-
+    font-family: 'Poppins', sans-serif;
+    background: var(--page-bg) !important;
+    background-attachment: fixed !important;
 }
 
 
@@ -16022,25 +15938,9 @@ body {
 
 
 body {
-
-    background:
-        radial-gradient(
-            circle at 14% 10%,
-            rgba(65,121,81,.20),
-            transparent 30%
-        ),
-        radial-gradient(
-            circle at 90% 50%,
-            rgba(100,153,101,.11),
-            transparent 28%
-        ),
-        linear-gradient(
-            135deg,
-            #08170f,
-            #10251a,
-            #091911
-        ) !important;
-
+    font-family: 'Poppins', sans-serif;
+    background: var(--page-bg) !important;
+    background-attachment: fixed !important;
 }
 
 .content-wrapper {

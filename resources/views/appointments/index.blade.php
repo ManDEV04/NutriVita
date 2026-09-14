@@ -39,7 +39,10 @@
     @php
         /*
         |--------------------------------------------------------------------------
-        | Datos para el calendario (se serializan a JSON en @section('js'))
+        | Datos para el calendario (se serializan a JSON en @section('js')
+
+    @vite(['resources/js/theme.js'])
+)
         |--------------------------------------------------------------------------
         */
         $calendarAppointments = $appointments->map(function ($appointment) {
@@ -112,6 +115,10 @@
      ESTILOS
      ========================================================= --}}
 @section('css')
+
+    {{-- Anti-parpadeo: aplica el tema guardado ANTES de pintar la página --}}
+    @include('partials.theme-init-script')
+
 
     <link
         href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"

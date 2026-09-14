@@ -8,6 +8,7 @@ export default defineConfig({
                 // Base
                 'resources/css/app.css',
                 'resources/js/app.js',
+                'resources/js/theme.js',
 
                 // Dashboard
                 'resources/css/nutriadmin.css',

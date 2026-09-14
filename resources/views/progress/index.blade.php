@@ -54,6 +54,10 @@
      ========================================================= --}}
 @section('css')
 
+    {{-- Anti-parpadeo: aplica el tema guardado ANTES de pintar la página --}}
+    @include('partials.theme-init-script')
+
+
     <link
         href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
         rel="stylesheet"
@@ -65,5 +69,15 @@
     >
 
     @vite(['resources/css/nutriadmin.css'])
+
+@stop
+
+
+{{-- =========================================================
+     SCRIPTS
+     ========================================================= --}}
+@section('js')
+
+    @vite(['resources/js/theme.js'])
 
 @stop

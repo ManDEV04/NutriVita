@@ -841,6 +841,57 @@
 
         </div>
 
+        {{-- MENSAJE INFERIOR --}}
+
+        <div class="features-bottom">
+
+
+
+            <div class="features-bottom-icon">
+
+                <i class="fas fa-leaf"></i>
+
+            </div>
+
+
+
+            <div>
+
+                <strong>
+
+                    Menos administración. Más nutrición.
+
+                </strong>
+
+                <span>
+
+                    Toda la información de tu consulta
+
+                    disponible cuando la necesites.
+
+                </span>
+
+            </div>
+
+
+
+            <a href="{{ route('register') }}">
+
+                Comenzar gratis
+
+                <i class="fas fa-arrow-right"></i>
+
+            </a>
+
+
+
+        </div>
+
+
+    </div>
+</section>
+
+
     {{-- ======================================================
 
      CÓMO FUNCIONA
@@ -1138,13 +1189,63 @@
 
         </div>
 
+        {{-- CTA --}}
+        <div class="how-cta">
 
+
+
+            <div>
+
+                <span>
+
+                    ¿LISTO PARA PROBARLO?
+
+                </span>
+
+                <h3>
+
+                    Empieza con 7 días gratis.
+
+                </h3>
+
+                <p>
+
+                    Explora NutriAdmin antes de contratar un plan.
+
+                </p>
+
+            </div>
+
+
+
+            <a
+
+                href="{{ route('register') }}"
+
+                class="how-cta-button"
+
+            >
+
+                Crear mi cuenta
+
+                <i class="fas fa-arrow-right"></i>
+
+            </a>
+
+
+
+        </div>
+
+
+
+    </div>
+
+</section>
 
 {{-- ======================================================
 
      DEMO DEL SISTEMA
 ====================================================== --}}
-
 <section
 
     class="product-demo-section"
@@ -1185,11 +1286,11 @@
 
             <p>
 
-                Una interfaz clara y moderna para administrar
+                Así se ve NutriAdmin por dentro: una interfaz
 
-                pacientes, agenda, progreso e ingresos sin
+                clara y ordenada, pensada para que encuentres
 
-                complicar tu flujo de trabajo.
+                todo en segundos.
 
             </p>
 
@@ -1406,131 +1507,66 @@
             </article>
 
 
-
-
-
             {{-- PROGRESO --}}
-
             <article class="demo-card">
 
-
-
                 <div class="demo-card-image">
-
                     <img
-
                         src="{{ asset('images/landing/progreso.png') }}"
-
                         alt="Progreso de pacientes en NutriAdmin"
-
                     >
-
                 </div>
-
-
 
                 <div class="demo-card-content">
-
                     <div>
-
                         <span>
-
                             SEGUIMIENTO
-
                         </span>
-
                         <h3>
-
                             Visualiza resultados.
-
                         </h3>
-
                     </div>
 
-
-
                     <i class="fas fa-chart-line"></i>
-
                 </div>
 
-
-
                 <p>
-
                     Analiza peso, grasa corporal y masa muscular
-
                     mediante gráficas claras y fáciles de explicar.
-
                 </p>
 
-
-
             </article>
-
-
-
 
 
             {{-- PAGOS --}}
-
             <article class="demo-card">
 
-
-
                 <div class="demo-card-image">
-
                     <img
-
                         src="{{ asset('images/landing/pagos.png') }}"
-
                         alt="Control de pagos en NutriAdmin"
-
                     >
-
                 </div>
-
-
 
                 <div class="demo-card-content">
-
                     <div>
-
                         <span>
-
                             FINANZAS
-
                         </span>
-
                         <h3>
-
                             Controla tus ingresos.
-
                         </h3>
-
                     </div>
 
-
-
                     <i class="fas fa-wallet"></i>
-
                 </div>
 
-
-
                 <p>
-
                     Lleva un historial de pagos y conoce cuánto
-
                     está generando tu consulta.
-
                 </p>
 
-
-
             </article>
-
-
-
         </div>
 
 
@@ -1564,60 +1600,6 @@
             <a href="{{ route('register') }}">
 
                 Probar NutriAdmin
-
-                <i class="fas fa-arrow-right"></i>
-
-            </a>
-
-
-
-        </div>
-
-
-
-    </div>
-
-</section>
-
-        {{-- CTA --}}
-
-        <div class="how-cta">
-
-
-
-            <div>
-
-                <span>
-
-                    ¿LISTO PARA PROBARLO?
-
-                </span>
-
-                <h3>
-
-                    Empieza con 7 días gratis.
-
-                </h3>
-
-                <p>
-
-                    Explora NutriAdmin antes de contratar un plan.
-
-                </p>
-
-            </div>
-
-
-
-            <a
-
-                href="{{ route('register') }}"
-
-                class="how-cta-button"
-
-            >
-
-                Crear mi cuenta
 
                 <i class="fas fa-arrow-right"></i>
 
@@ -2649,58 +2631,6 @@
 
 
         </div>
-
-    </div>
-
-</section>
-
-        {{-- MENSAJE INFERIOR --}}
-
-        <div class="features-bottom">
-
-
-
-            <div class="features-bottom-icon">
-
-                <i class="fas fa-leaf"></i>
-
-            </div>
-
-
-
-            <div>
-
-                <strong>
-
-                    Menos administración. Más nutrición.
-
-                </strong>
-
-                <span>
-
-                    Toda la información de tu consulta
-
-                    disponible cuando la necesites.
-
-                </span>
-
-            </div>
-
-
-
-            <a href="{{ route('register') }}">
-
-                Comenzar gratis
-
-                <i class="fas fa-arrow-right"></i>
-
-            </a>
-
-
-
-        </div>
-
-
 
     </div>
 

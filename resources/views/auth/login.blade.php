@@ -12,6 +12,10 @@
 
     <title>Iniciar sesión | NutriAdmin</title>
 
+    {{-- Anti-parpadeo: respeta el tema ya elegido en el resto del sitio.
+         Esta página no tiene botón propio de cambio de tema. --}}
+    @include('partials.theme-init-script')
+
     <link
         href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
         rel="stylesheet"
