@@ -10,7 +10,7 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
-#[Fillable(['name', 'email', 'password'])]
+#[Fillable(['name','email','password','trial_started_at','trial_ends_at','subscription_status','plan','subscription_started_at','subscription_ends_at',])]
 #[Hidden(['password', 'remember_token'])]
 class User extends Authenticatable
 {
@@ -32,6 +32,7 @@ class User extends Authenticatable
         return $this->hasMany(Payment::class);
     }
 
+    
     public function consultations(): HasMany
 {
     return $this->hasMany(Consultation::class);
@@ -40,8 +41,13 @@ class User extends Authenticatable
     protected function casts(): array
     {
         return [
-            'email_verified_at' => 'datetime',
-            'password' => 'hashed',
-        ];
-    }
+        'email_verified_at' => 'datetime',
+        'password' => 'hashed',
+
+        'trial_started_at' => 'datetime',
+        'trial_ends_at' => 'datetime',
+        'subscription_started_at' => 'datetime',
+        'subscription_ends_at' => 'datetime',
+    ];
+}
 }
