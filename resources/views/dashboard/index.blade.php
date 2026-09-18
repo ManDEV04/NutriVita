@@ -1,5 +1,58 @@
 @extends('adminlte::page')
 
+
+{{-- SECCION DE PRUEBA 7 DIAS --}}
+
+@if(auth()->user()->subscription_status === 'trial')
+
+    <div class="trial-alert">
+
+        <div class="trial-alert-icon">
+            <i class="fas fa-seedling"></i>
+        </div>
+
+        <div class="trial-alert-content">
+
+            <span class="trial-alert-label">
+                PRUEBA GRATUITA
+            </span>
+
+            @if($isTrialActive)
+
+                <strong>
+                    Te quedan {{ $trialDaysRemaining }} días
+                </strong>
+
+                <p>
+                    Estás usando NutriAdmin en modo de prueba.
+                    Explora todas las herramientas disponibles.
+                </p>
+
+            @else
+
+                <strong>
+                    Tu prueba gratuita ha terminado
+                </strong>
+
+                <p>
+                    Selecciona un plan para continuar usando NutriAdmin.
+                </p>
+
+            @endif
+
+        </div>
+
+        <a
+            href="{{ route('landing') }}#planes"
+            class="trial-alert-button"
+        >
+            Ver planes
+            <i class="fas fa-arrow-right"></i>
+        </a>
+
+    </div>
+
+@endif
 @section('title', 'Dashboard | NutriAdmin')
 
 

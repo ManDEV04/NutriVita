@@ -16,9 +16,35 @@ class DashboardController extends Controller
             ->where('active', true)
             ->count();
 
+        $user = Auth::user();
+
+        // ==========================================
+        // PRUEBA GRATUITA DE 7 DÍAS
+        // ==========================================
+
+        $trialDaysRemaining = null;
+        $isTrialActive = false;
+
+        if (
+            $user &&
+            $user->subscription_status === 'trial' &&
+            $user->trial_ends_at
+        ) {
+            $trialDaysRemaining = now()
+                ->startOfDay()
+                ->diffInDays(
+                    $user->trial_ends_at->copy()->startOfDay(),
+                    false
+                );
+
+            $isTrialActive = $trialDaysRemaining >= 0;
+        }
+
         return view('dashboard.index', compact(
             'totalPatients',
-            'activePatients'
+            'activePatients',
+            'trialDaysRemaining',
+            'isTrialActive'
         ));
     }
 }

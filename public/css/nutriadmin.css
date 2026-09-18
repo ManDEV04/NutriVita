@@ -35,6 +35,91 @@ body {
     border-right: none !important;
 }
 
+.trial-alert {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 25px;
+    padding: 18px 20px;
+    border: 1px solid rgba(163, 204, 156, .18);
+    border-radius: 18px;
+    background:
+        linear-gradient(
+            135deg,
+            rgba(150, 195, 144, .10),
+            rgba(255,255,255,.03)
+        );
+}
+
+.trial-alert-icon {
+    width: 46px;
+    height: 46px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    border-radius: 14px;
+    background: rgba(167, 207, 158, .12);
+    color: #a8ce9e;
+    font-size: 17px;
+}
+
+.trial-alert-content {
+    flex: 1;
+}
+
+.trial-alert-label {
+    display: block;
+    margin-bottom: 4px;
+    color: #95b996;
+    font-size: 8px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+}
+
+.trial-alert-content strong {
+    display: block;
+    color: #f0f7f1;
+    font-size: 15px;
+}
+
+.trial-alert-content p {
+    margin: 4px 0 0;
+    color: rgba(220, 235, 223, .48);
+    font-size: 9px;
+}
+
+.trial-alert-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    padding: 10px 14px;
+    border-radius: 11px;
+    background: #a8ce9e;
+    color: #102417;
+    font-size: 9px;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.trial-alert-button:hover {
+    color: #102417;
+    background: #b8dbaa;
+}
+
+@media(max-width: 650px) {
+    .trial-alert {
+        align-items: flex-start;
+        flex-wrap: wrap;
+    }
+
+    .trial-alert-button {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+
 /* Logo */
 
 .brand-link {
