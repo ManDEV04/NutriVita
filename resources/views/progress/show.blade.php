@@ -3,6 +3,9 @@
 @section('title', 'Progreso del paciente | NutriAdmin')
 
 
+{{-- =========================================================
+     CONTENT HEADER
+     ========================================================= --}}
 @section('content_header')
 
 <div class="progress-detail-header">
@@ -51,7 +54,9 @@
 @stop
 
 
-
+{{-- =========================================================
+     CONTENT
+     ========================================================= --}}
 @section('content')
 
 <div class="progress-detail-page">
@@ -349,550 +354,51 @@
 @stop
 
 
-
+{{-- =========================================================
+     ESTILOS
+     ========================================================= --}}
 @section('css')
 
-<link
-    rel="stylesheet"
-    href="{{ asset('css/nutriadmin.css') }}"
->
+    {{-- Anti-parpadeo: aplica el tema guardado ANTES de pintar la página --}}
+    @include('partials.theme-init-script')
 
-<style>
 
-body {
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
 
-    background:
-        radial-gradient(
-            circle at 14% 10%,
-            rgba(65,121,81,.20),
-            transparent 30%
-        ),
-        radial-gradient(
-            circle at 90% 50%,
-            rgba(100,153,101,.11),
-            transparent 28%
-        ),
-        linear-gradient(
-            135deg,
-            #08170f,
-            #10251a,
-            #091911
-        ) !important;
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
 
-}
-
-.content-wrapper {
-    background: transparent !important;
-}
-
-
-/* HEADER */
-
-.progress-detail-header {
-
-    display: flex;
-
-    justify-content: space-between;
-
-    align-items: center;
-
-    gap: 15px;
-
-}
-
-.progress-eyebrow {
-
-    color: #8eb59a;
-
-    font-size: 10px;
-
-    font-weight: 700;
-
-    letter-spacing: 2px;
-
-}
-
-.progress-detail-header h1 {
-
-    margin: 4px 0;
-
-    color: #f3faf4;
-
-    font-size: 30px;
-
-}
-
-.progress-detail-header p {
-
-    margin: 0;
-
-    color: rgba(220,235,223,.45);
-
-    font-size: 12px;
-
-}
-
-
-/* BOTONES */
-
-.btn-progress-add,
-.btn-progress-back {
-
-    display: inline-flex;
-
-    align-items: center;
-
-    gap: 7px;
-
-    padding: 10px 14px;
-
-    border-radius: 13px;
-
-    font-size: 10px;
-
-    font-weight: 600;
-
-    text-decoration: none !important;
-
-}
-
-.btn-progress-add {
-
-    background: #a7ca9d;
-
-    color: #102417 !important;
-
-}
-
-.btn-progress-back {
-
-    border: 1px solid rgba(255,255,255,.10);
-
-    background: rgba(255,255,255,.045);
-
-    color: #c9dbcb !important;
-
-}
-
-
-/* MÉTRICAS */
-
-.detail-stats {
-
-    display: grid;
-
-    grid-template-columns:
-        repeat(4, minmax(0,1fr));
-
-    gap: 14px;
-
-    margin-bottom: 18px;
-
-}
-
-.detail-stat {
-
-    padding: 18px;
-
-    border-radius: 19px;
-
-    border:
-        1px solid rgba(255,255,255,.09);
-
-    background:
-        rgba(255,255,255,.04);
-
-    backdrop-filter: blur(20px);
-
-}
-
-.detail-stat span {
-
-    display: block;
-
-    color: rgba(214,230,217,.40);
-
-    font-size: 9px;
-
-}
-
-.detail-stat strong {
-
-    display: block;
-
-    margin: 5px 0;
-
-    color: #f1f8f2;
-
-    font-size: 23px;
-
-}
-
-.detail-stat small {
-
-    color: #9fbd9f;
-
-    font-size: 8px;
-
-}
-
-
-/* GRÁFICAS */
-
-.charts-grid {
-
-    display: grid;
-
-    grid-template-columns:
-        repeat(2,minmax(0,1fr));
-
-    gap: 16px;
-
-}
-
-.progress-chart-card,
-.history-card {
-
-    padding: 22px;
-
-    border-radius: 23px;
-
-    border:
-        1px solid rgba(255,255,255,.10);
-
-    background:
-        rgba(255,255,255,.04);
-
-    backdrop-filter: blur(22px);
-
-}
-
-.chart-title {
-
-    display: flex;
-
-    justify-content: space-between;
-
-    align-items: center;
-
-    margin-bottom: 18px;
-
-}
-
-.chart-title span {
-
-    color: rgba(191,214,194,.35);
-
-    font-size: 8px;
-
-    letter-spacing: 1.4px;
-
-}
-
-.chart-title h4 {
-
-    margin: 3px 0 0;
-
-    color: #eff7f0;
-
-    font-size: 16px;
-
-}
-
-.chart-title > i {
-
-    color: #a7c99f;
-
-    font-size: 20px;
-
-}
-
-.chart-container {
-
-    position: relative;
-
-    height: 300px;
-
-}
-
-
-/* HISTORIAL */
-
-.history-card {
-
-    margin-top: 16px;
-
-}
-
-.progress-history-table {
-
-    color: rgba(225,238,227,.68);
-
-}
-
-.progress-history-table th {
-
-    border: none !important;
-
-    color: rgba(203,222,206,.35);
-
-    font-size: 8px;
-
-}
-
-.progress-history-table td {
-
-    border-top:
-        1px solid rgba(255,255,255,.055) !important;
-
-    font-size: 10px;
-
-}
-
-
-/* VACÍO */
-
-.progress-empty-detail {
-
-    padding: 80px 20px;
-
-    text-align: center;
-
-    border-radius: 24px;
-
-    background:
-        rgba(255,255,255,.04);
-
-    color:
-        rgba(218,232,220,.45);
-
-}
-
-.progress-empty-detail i {
-
-    margin-bottom: 15px;
-
-    color: #9aba95;
-
-    font-size: 42px;
-
-}
-
-.progress-empty-detail h4 {
-
-    color: #eff7f0;
-
-}
-
-.progress-empty-detail a {
-
-    display: inline-block;
-
-    margin-top: 12px;
-
-    color: #a9cfa2;
-
-}
-
-
-/* RESPONSIVE */
-
-@media(max-width: 1000px) {
-
-    .detail-stats {
-
-        grid-template-columns: 1fr 1fr;
-
-    }
-
-    .charts-grid {
-
-        grid-template-columns: 1fr;
-
-    }
-
-}
-
-@media(max-width: 650px) {
-
-    .progress-detail-header {
-
-        align-items: flex-start;
-
-        flex-direction: column;
-
-    }
-
-    .detail-stats {
-
-        grid-template-columns: 1fr;
-
-    }
-
-}
-
-</style>
+    @vite(['resources/css/nutriadmin.css'])
 
 @stop
 
 
-
+{{-- =========================================================
+     SCRIPTS
+     ========================================================= --}}
 @section('js')
 
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-
-<script>
-
-document.addEventListener('DOMContentLoaded', function () {
-
-    const labels = @json($labels);
-
-    const weights = @json($weights);
-
-    const bodyFat = @json($bodyFat);
-
-    const muscleMass = @json($muscleMass);
-
-
-    const chartOptions = {
-
-        responsive: true,
-
-        maintainAspectRatio: false,
-
-        plugins: {
-
-            legend: {
-
-                labels: {
-                    color: 'rgba(225,240,228,.65)'
-                }
-
-            }
-
-        },
-
-        scales: {
-
-            x: {
-
-                ticks: {
-                    color: 'rgba(220,235,223,.40)'
-                },
-
-                grid: {
-                    color: 'rgba(255,255,255,.04)'
-                }
-
-            },
-
-            y: {
-
-                ticks: {
-                    color: 'rgba(220,235,223,.40)'
-                },
-
-                grid: {
-                    color: 'rgba(255,255,255,.05)'
-                }
-
-            }
-
-        }
-
-    };
-
-
-    /* PESO */
-
-    new Chart(
-        document.getElementById('weightChart'),
-        {
-
-            type: 'line',
-
-            data: {
-
-                labels: labels,
-
-                datasets: [
-
-                    {
-
-                        label: 'Peso (kg)',
-
-                        data: weights,
-
-                        borderColor: '#a7ca9d',
-
-                        backgroundColor:
-                            'rgba(167,202,157,.12)',
-
-                        fill: true,
-
-                        tension: .35
-
-                    }
-
-                ]
-
-            },
-
-            options: chartOptions
-
-        }
-    );
-
-
-    /* COMPOSICIÓN */
-
-    new Chart(
-        document.getElementById('compositionChart'),
-        {
-
-            type: 'line',
-
-            data: {
-
-                labels: labels,
-
-                datasets: [
-
-                    {
-
-                        label: 'Grasa (%)',
-
-                        data: bodyFat,
-
-                        borderColor: '#d7bd70',
-
-                        tension: .35
-
-                    },
-
-                    {
-
-                        label: 'Masa muscular (kg)',
-
-                        data: muscleMass,
-
-                        borderColor: '#87beb0',
-
-                        tension: .35
-
-                    }
-
-                ]
-
-            },
-
-            options: chartOptions
-
-        }
-    );
-
-});
-
-</script>
+    @vite(['resources/js/theme.js'])
+
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    {{-- Solo pasamos los datos del servidor a JS; las gráficas
+         viven en resources/js/pages/progress-show.js --}}
+    <script>
+        window.progressShowData = {
+            labels: @json($labels),
+            weights: @json($weights),
+            bodyFat: @json($bodyFat),
+            muscleMass: @json($muscleMass),
+        };
+    </script>
+
+    @vite(['resources/js/pages/progress-show.js'])
 
 @stop

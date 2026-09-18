@@ -12,6 +12,10 @@
 
     <title>Iniciar sesión | NutriAdmin</title>
 
+    {{-- Anti-parpadeo: respeta el tema ya elegido en el resto del sitio.
+         Esta página no tiene botón propio de cambio de tema. --}}
+    @include('partials.theme-init-script')
+
     <link
         href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
         rel="stylesheet"
@@ -549,50 +553,8 @@
 
 
 
-<script>
-
-document.addEventListener('DOMContentLoaded', function () {
-
-    const passwordInput =
-        document.getElementById('password');
-
-    const togglePassword =
-        document.getElementById('togglePassword');
-
-    const passwordIcon =
-        document.getElementById('passwordIcon');
-
-
-    if (
-        passwordInput &&
-        togglePassword &&
-        passwordIcon
-    ) {
-
-        togglePassword.addEventListener('click', function () {
-
-            const hidden =
-                passwordInput.type === 'password';
-
-
-            passwordInput.type =
-                hidden
-                    ? 'text'
-                    : 'password';
-
-
-            passwordIcon.className =
-                hidden
-                    ? 'far fa-eye-slash'
-                    : 'far fa-eye';
-
-        });
-
-    }
-
-});
-
-</script>
+{{-- Mostrar/ocultar contraseña — ver resources/js/pages/auth-login.js --}}
+@vite(['resources/js/pages/auth-login.js'])
 
 
 </body>

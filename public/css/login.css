@@ -1,4 +1,43 @@
 /* =========================================================
+   TEMA — VARIABLES (claro / oscuro)
+   Ver resources/views/partials/theme-init-script.blade.php
+   Esta página no tiene botón propio, pero respeta el tema ya
+   elegido en el resto del sitio (localStorage compartido).
+========================================================= */
+:root,
+[data-theme="dark"] {
+    --login-bg:
+        radial-gradient(circle at 10% 20%, rgba(78,139,92,.23), transparent 28%),
+        radial-gradient(circle at 89% 78%, rgba(103,161,107,.18), transparent 30%),
+        radial-gradient(circle at 75% 5%, rgba(146,190,132,.08), transparent 22%),
+        linear-gradient(135deg, #07150d 0%, #10261a 46%, #08170f 100%);
+    --login-text: #eef7f0;
+    --login-muted: rgba(216,232,219,.55);
+    --login-muted-strong: rgba(226,239,228,.75);
+    --login-card-bg: rgba(255,255,255,.04);
+    --login-card-bg-soft: rgba(255,255,255,.055);
+    --login-card-border: rgba(255,255,255,.10);
+    --login-shadow: 0 25px 60px rgba(0,0,0,.25);
+    --login-ambient-opacity: 1;
+}
+
+[data-theme="light"] {
+    --login-bg:
+        radial-gradient(circle at 10% 15%, rgba(75,143,86,.14), transparent 30%),
+        radial-gradient(circle at 90% 80%, rgba(75,143,86,.10), transparent 30%),
+        linear-gradient(160deg, #f6faf7 0%, #eef6f0 55%, #e9f2eb 100%);
+    --login-text: #16281c;
+    --login-muted: rgba(20,40,27,.55);
+    --login-muted-strong: rgba(20,40,27,.75);
+    --login-card-bg: #ffffff;
+    --login-card-bg-soft: #ffffff;
+    --login-card-border: rgba(20,45,28,.10);
+    --login-shadow: 0 15px 35px rgba(20,45,28,.09);
+    --login-ambient-opacity: .35;
+}
+
+
+/* =========================================================
    RESET
 ========================================================= */
 
@@ -27,9 +66,9 @@ body {
 
     font-family: 'Poppins', sans-serif;
 
-    color: #eef7f0;
+    color: var(--login-text);
 
-    background: #07140d;
+    background: var(--login-bg);
 
 }
 
@@ -57,32 +96,7 @@ body {
 
     padding: 35px;
 
-    background:
-
-        radial-gradient(
-            circle at 10% 20%,
-            rgba(78, 139, 92, .23),
-            transparent 28%
-        ),
-
-        radial-gradient(
-            circle at 89% 78%,
-            rgba(103, 161, 107, .18),
-            transparent 30%
-        ),
-
-        radial-gradient(
-            circle at 75% 5%,
-            rgba(146, 190, 132, .08),
-            transparent 22%
-        ),
-
-        linear-gradient(
-            135deg,
-            #07150d 0%,
-            #10261a 46%,
-            #08170f 100%
-        );
+    background: var(--login-bg);
 
 }
 
@@ -101,6 +115,8 @@ body {
     border-radius: 50%;
 
     filter: blur(110px);
+
+    opacity: var(--login-ambient-opacity);
 
 }
 
@@ -228,20 +244,20 @@ body {
         1.1fr
         .9fr;
 
-    border: 1px solid rgba(255,255,255,.14);
+    border: 1px solid var(--login-card-border);
 
     border-radius: 34px;
 
     overflow: hidden;
 
     background:
-        rgba(255,255,255,.025);
+        var(--login-card-bg);
 
     box-shadow:
 
         inset 0 1px 0 rgba(255,255,255,.10),
 
-        0 40px 100px rgba(0,0,0,.42);
+        var(--login-shadow);
 
     backdrop-filter:
         blur(35px)
@@ -273,12 +289,15 @@ body {
 
     flex-direction: column;
 
+    /* Fijo siempre oscuro (franja de marca) — independiente del tema,
+       porque su texto usa colores claros fijos. Antes era translúcido
+       y dejaba ver el fondo de .login-shell (blanco en tema claro),
+       lo que volvía el texto ilegible. */
     background:
-
         linear-gradient(
             145deg,
-            rgba(120, 176, 116, .13),
-            rgba(255,255,255,.025)
+            #16382a,
+            #0c2318
         );
 
     border-right:
@@ -883,13 +902,7 @@ body {
 
     padding: 55px;
 
-    background:
-
-        linear-gradient(
-            145deg,
-            rgba(3,15,9,.28),
-            rgba(255,255,255,.01)
-        );
+    background: var(--login-card-bg);
 
 }
 
@@ -914,15 +927,9 @@ body {
     border-radius: 28px;
 
     border:
-        1px solid rgba(255,255,255,.13);
+        1px solid var(--login-card-border);
 
-    background:
-
-        linear-gradient(
-            145deg,
-            rgba(255,255,255,.085),
-            rgba(255,255,255,.025)
-        );
+    background: var(--login-card-bg-soft);
 
     backdrop-filter:
         blur(28px)
@@ -938,7 +945,7 @@ body {
 
         inset 0 -1px 0 rgba(255,255,255,.025),
 
-        0 25px 60px rgba(0,0,0,.24);
+        var(--login-shadow);
 
 }
 
@@ -994,7 +1001,7 @@ body {
 
     margin-bottom: 8px;
 
-    color: #90b497;
+    color: var(--login-muted-strong);
 
     font-size: 8px;
 
@@ -1007,7 +1014,7 @@ body {
 
 .login-header h2 {
 
-    color: #f4faf5;
+    color: var(--login-text);
 
     font-size: 30px;
 
@@ -1023,7 +1030,7 @@ body {
     margin-top: 8px;
 
     color:
-        rgba(216,233,219,.43);
+        var(--login-muted);
 
     font-size: 11px;
 
@@ -1141,7 +1148,7 @@ body {
     margin-bottom: 8px;
 
     color:
-        rgba(224,238,226,.65);
+        var(--login-muted-strong);
 
     font-size: 10px;
 
@@ -1168,10 +1175,10 @@ body {
     border-radius: 16px;
 
     border:
-        1px solid rgba(255,255,255,.105);
+        1px solid var(--login-card-border);
 
     background:
-        rgba(255,255,255,.042);
+        var(--login-card-bg);
 
     box-shadow:
         inset 0 1px 0 rgba(255,255,255,.065);
@@ -1187,10 +1194,10 @@ body {
 .input-glass:focus-within {
 
     border-color:
-        rgba(161,205,154,.32);
+        rgba(161,205,154,.45);
 
     background:
-        rgba(255,255,255,.065);
+        var(--login-card-bg-soft);
 
     box-shadow:
 
@@ -1212,7 +1219,7 @@ body {
     justify-content: center;
 
     color:
-        rgba(169,199,174,.47);
+        var(--login-muted-strong);
 
     font-size: 12px;
 
@@ -1235,7 +1242,7 @@ body {
 
     background: transparent;
 
-    color: #edf7ef;
+    color: var(--login-text);
 
     font-family: 'Poppins', sans-serif;
 
@@ -1247,7 +1254,7 @@ body {
 .input-glass input::placeholder {
 
     color:
-        rgba(206,225,210,.25);
+        var(--login-muted);
 
 }
 
@@ -1272,7 +1279,7 @@ body {
     background: transparent;
 
     color:
-        rgba(181,206,185,.42);
+        var(--login-muted-strong);
 
     transition: .2s;
 
@@ -1321,7 +1328,7 @@ body {
     cursor: pointer;
 
     color:
-        rgba(216,231,219,.43) !important;
+        var(--login-muted) !important;
 
     font-size: 9px !important;
 
@@ -1350,10 +1357,10 @@ body {
     border-radius: 5px;
 
     border:
-        1px solid rgba(255,255,255,.13);
+        1px solid var(--login-card-border);
 
     background:
-        rgba(255,255,255,.045);
+        var(--login-card-bg);
 
     color: transparent;
 
@@ -1379,7 +1386,7 @@ body {
 
 .forgot-password {
 
-    color: #91b990;
+    color: var(--login-muted-strong);
 
     font-size: 9px;
 
@@ -1573,7 +1580,7 @@ body {
     margin-top: 22px;
 
     color:
-        rgba(204,222,208,.25);
+        var(--login-muted);
 
     font-size: 8px;
 
@@ -1598,7 +1605,7 @@ body {
     margin-top: 22px;
 
     color:
-        rgba(211,227,215,.22);
+        var(--login-muted);
 
     font-size: 8px;
 
@@ -1661,7 +1668,7 @@ body {
 
         margin-bottom: 35px;
 
-        color: #eef8f0;
+        color: var(--login-text);
 
         font-size: 15px;
 

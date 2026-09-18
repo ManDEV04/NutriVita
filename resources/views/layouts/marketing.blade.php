@@ -18,6 +18,9 @@
         content="NutriAdmin te ayuda a gestionar pacientes, citas, progreso, pagos y planes nutricionales desde un solo lugar."
     >
 
+    {{-- Anti-parpadeo: aplica el tema guardado ANTES de pintar la página --}}
+    @include('partials.theme-init-script')
+
     <link
         rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
@@ -27,6 +30,8 @@
         rel="stylesheet"
         href="{{ asset('css/landing.css') }}"
     >
+
+    @vite(['resources/js/theme.js'])
 
 </head>
 
@@ -99,10 +104,12 @@
 
             <div class="landing-nav-actions">
 
+                @include('partials.theme-toggle')
+
                 @auth
 
                     <a
-                        href="{{ route('dashboard') }}"
+                        href="{{ route('dashboard.index') }}"
                         class="nav-login"
                     >
                         Ir al panel
@@ -164,41 +171,8 @@
 
 
 
-    <script>
-
-        const menuButton =
-            document.getElementById('mobileMenuButton');
-
-        const nav =
-            document.getElementById('landingNav');
-
-
-        menuButton?.addEventListener(
-            'click',
-            function () {
-
-                nav.classList.toggle('active');
-
-            }
-        );
-
-
-        window.addEventListener(
-            'scroll',
-            function () {
-
-                const navbar =
-                    document.querySelector('.landing-navbar');
-
-                navbar.classList.toggle(
-                    'scrolled',
-                    window.scrollY > 20
-                );
-
-            }
-        );
-
-    </script>
+    {{-- Menú móvil y navbar en scroll — ver resources/js/pages/marketing.js --}}
+    @vite(['resources/js/pages/marketing.js'])
 
 
     @yield('js')

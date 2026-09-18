@@ -763,7 +763,7 @@ return [
 
     [
         'text' => 'Dashboard',
-        'url'  => '/',
+        'url'  => 'dashboard',
         'icon' => 'fas fa-fw fa-home',
     ],
 

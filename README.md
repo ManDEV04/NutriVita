@@ -1,58 +1,109 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# NutriVita — Reorganización de vistas, CSS y JS
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Este zip contiene TODAS las vistas de `resources/views` reorganizadas:
+CSS movido a `resources/css/nutriadmin.css` (una sola sección por página,
+claramente comentada), JS movido a `resources/js/` (uno por página), y
+partials creados donde el archivo era demasiado grande para mantenerlo
+en un solo bloque.
 
-## About Laravel
+## ⚠️ Antes de copiar los archivos a tu proyecto
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+1. **Reemplaza tu `vite.config.js`** por el de este zip — agrega todas
+   las entradas JS nuevas al arreglo `input`. Sin esto, cualquier
+   `@vite([...])` de las vistas nuevas va a tronar con
+   `ViteManifestNotFoundException`.
+2. Corre `npm run build` (o `npm run dev` mientras programas).
+3. Copia `resources/views/*`, `resources/css/nutriadmin.css`,
+   `resources/js/*` y `web.php` a tu proyecto, sobrescribiendo.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## Qué cambió, por módulo
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+### Dashboard (ya lo tenías validado)
+- `dashboard/index.blade.php` + 7 partials (header, hero, metrics, charts,
+  summary, quick-actions, footer)
+- JS en `resources/js/dashboard.js`
 
-## Learning Laravel
+### Pacientes (`patients/`)
+- `index.blade.php` → partials `hero`, `stats`, `toolbar`, `list`
+- `create.blade.php` → partials `create-form`, `create-sidebar`
+- `edit.blade.php` → partials `edit-form`, `edit-preview`
+- `show.blade.php` → 6 partials (hero, info-grid, latest-evaluation,
+  progress, chart, history)
+- JS: `patients-index.js`, `patients-create.js`, `patients-edit.js`,
+  `patients-show.js` (esta última usa gráficas de Chart.js)
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+### Citas (`appointments/`)
+- `index.blade.php` → partials `index-hero`, `index-stats`,
+  `index-calendar` (calendario interactivo completo)
+- `create.blade.php` → partials `create-form`, `create-sidebar`
+- JS: `appointments-index.js` (721 líneas — el calendario), `appointments-create.js`
 
-In addition, [Laracasts](https://laracasts.com) contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+### Consultas (`consultations/`)
+- `index.blade.php` — tamaño razonable, sin partials, solo CSS extraído
+- `create.blade.php` — **este NUNCA tuvo su propio `<style>`** en el
+  original (solo usaba Bootstrap plano: `card`, `form-control`, `btn-light`).
+  A tu pedido, le di el mismo look "glass" que las demás vistas del
+  módulo, reutilizando las clases ya existentes (`form-glass-card`,
+  `liquid-input`, `liquid-select`, `liquid-textarea`, `section-label`,
+  `form-actions`, etc. — definidas en la sección de PACIENTES — CREATE).
+  Solo agregué 2 clases nuevas y pequeñas (`.consultation-form-page`,
+  `.field-hint`) y un JS mínimo para los contadores de caracteres
+  (`consultations-create.js`).
+- **Nota:** a estas dos les faltaba el `<link>` de FontAwesome (el mismo
+  bug que vimos en el dashboard). Ya se lo agregué.
 
-You can also watch bite-sized lessons with real-world projects on [Laravel Learn](https://laravel.com/learn), where you will be guided through building a Laravel application from scratch while learning PHP fundamentals.
+### Pagos (`payments/`)
+- `index.blade.php`, `create.blade.php` — igual, sin partials, CSS extraído
+- Les agregué el link de Google Fonts que no tenían
 
-## Agentic Development
+### Evaluaciones (`evaluations/`)
+- `create.blade.php` → partials `create-form`, `create-sidebar`
+- JS: `evaluations-create.js` (vista previa + cálculo de IMC en vivo)
 
-Laravel's predictable structure and conventions make it ideal for AI coding agents like Claude Code, Cursor, and GitHub Copilot. Install [Laravel Boost](https://laravel.com/docs/ai) to supercharge your AI workflow:
+### Progreso (`progress/`)
+- `index.blade.php` → partials `index-stats`, `index-patients`
+- `show.blade.php` — CSS/JS extraído, `progress-show.js` con las gráficas
+  de peso y composición corporal
 
-```bash
-composer require laravel/boost --dev
+### Landing / Marketing / Auth
+- `landing/index.blade.php` — **sin cambios**, ya usaba
+  `asset('css/landing.css')` externo (no vive en `nutriadmin.css`, es un
+  sistema de diseño aparte)
+- **Encontré `landing/index.blade-2.php`** — un archivo con extensión
+  inválida para Blade (Laravel nunca lo carga como vista). Parece un
+  borrador tuyo con decoraciones extra (aguacate, verduras, etc.) que no
+  llegó a integrarse. Lo incluyo como `index.blade-2.php.bak` sin tocarlo
+  — revisa si lo necesitas o lo puedes borrar.
+- `layouts/marketing.blade.php` — el script inline (menú móvil + navbar
+  al hacer scroll) ahora vive en `resources/js/pages/marketing.js`
+- `auth/login.blade.php` — el script de mostrar/ocultar contraseña ahora
+  vive en `resources/js/pages/auth-login.js`
 
-php artisan boost:install
-```
+## El patrón usado para JS con datos de Blade
 
-Boost provides your agent 15+ tools and skills that help agents build Laravel applications while following best practices.
+Cuando un script necesitaba datos del servidor (`@json($variable)`,
+`{{ $algo }}`), separé:
+- Un `<script>` pequeño **dentro del blade** que solo arma
+  `window.xxxData = { ... }` con esos datos.
+- El archivo `.js` real, que lee de `window.xxxData` y no contiene
+  ninguna sintaxis de Blade — así sí puede vivir en Vite sin problema.
 
-## Contributing
+Esto aplica en: `dashboard.js`, `patients-show.js`,
+`appointments-index.js`, `progress-show.js`.
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+## Nota sobre el CSS
 
-## Code of Conduct
+`nutriadmin.css` quedó grande (una sección completa por página, todas
+comentadas con su nombre). **No deduplico** reglas repetidas entre
+páginas (por ejemplo el `body { background: ... }` aparece varias
+veces, una por sección) — preferí no arriesgar romper el diseño de
+ninguna vista. Si más adelante quieres que consolide esas reglas
+repetidas en una sola sección "global", dime y lo hacemos con cuidado,
+viendo cada página.
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+## Todos los archivos pasaron chequeos de sanidad
 
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+- CSS: llaves `{`/`}` balanceadas (1132 = 1132)
+- Todos los `.js` nuevos: sintaxis válida (`node --check`)
+- Todos los `.blade.php`: `@section`/`@stop`, `@if`/`@endif`,
+  `@foreach`/`@endforeach` balanceados
