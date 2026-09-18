@@ -1094,7 +1094,7 @@ body {
 
     margin-bottom: 6px;
 
-    color: #8fb99b;
+    color: var(--accent);
 
     font-size: 10px;
 
@@ -1109,7 +1109,7 @@ body {
 
     margin: 0;
 
-    color: #f5fbf6;
+    color: var(--text-primary);
 
     font-size: 32px;
 
@@ -1126,7 +1126,7 @@ body {
 
     margin-bottom: 0;
 
-    color: rgba(218, 235, 222, .55);
+    color: var(--text-muted);
 
     font-size: 13px;
 
@@ -1342,7 +1342,7 @@ body {
 
     -webkit-backdrop-filter: blur(20px);
 
-    color: #dff5e2;
+    color: var(--text-primary);
 
 }
 
@@ -1381,7 +1381,7 @@ body {
 
     display: block;
 
-    color: rgba(226,246,229,.70);
+    color: var(--text-secondary);
 
     font-size: 12px;
 
@@ -1503,7 +1503,7 @@ body {
             rgba(255,255,255,.06)
         );
 
-    color: #afd39f;
+    color: var(--accent);
 
     font-size: 29px;
 
@@ -1516,7 +1516,7 @@ body {
 
 .hero-small {
 
-    color: #9ac0a1;
+    color: var(--accent);
 
     font-size: 11px;
 
@@ -1533,7 +1533,7 @@ body {
 
         7px 0 10px;
 
-    color: #f3faf5;
+    color: var(--text-primary);
 
     font-size: 34px;
 
@@ -1546,7 +1546,7 @@ body {
 
 .hero-content h2 span {
 
-    color: #a8cc99;
+    color: var(--accent);
 
     font-weight: 600;
 
@@ -1559,7 +1559,7 @@ body {
 
     margin: 0;
 
-    color: rgba(225, 238, 227, .57);
+    color: var(--text-muted);
 
     font-size: 13px;
 
@@ -1604,7 +1604,7 @@ body {
 
     border-radius: 50%;
 
-    color: rgba(166, 204, 150, .55);
+    color: var(--text-muted);
 
     font-size: 88px;
 
@@ -1633,7 +1633,7 @@ body {
 
     backdrop-filter: blur(12px);
 
-    color: #9bc590;
+    color: var(--accent);
 
     border-radius: 50%;
 
@@ -1739,7 +1739,7 @@ body {
 
     border-radius: 16px;
 
-    color: #abd09f;
+    color: var(--accent);
 
     background:
         rgba(154, 198, 146, .12);
@@ -1751,14 +1751,14 @@ body {
 
 .active-icon {
 
-    color: #98d6a4;
+    color: var(--accent);
 
 }
 
 
 .inactive-icon {
 
-    color: #b4c6b5;
+    color: var(--accent);
 
 }
 
@@ -1769,7 +1769,7 @@ body {
 
     margin-bottom: 3px;
 
-    color: rgba(224,238,226,.46);
+    color: var(--text-muted);
 
     font-size: 11px;
 
@@ -1780,7 +1780,7 @@ body {
 
     margin: 0;
 
-    color: #f3faf4;
+    color: var(--text-primary);
 
     font-size: 25px;
 
@@ -1848,7 +1848,7 @@ body {
 
 .search-glass i {
 
-    color: rgba(198,221,202,.47);
+    color: var(--text-muted);
 
 }
 
@@ -1863,7 +1863,7 @@ body {
 
     background: transparent;
 
-    color: #edf8ef;
+    color: var(--text-primary);
 
     font-size: 13px;
 
@@ -1873,7 +1873,7 @@ body {
 .search-glass input::placeholder {
 
     color:
-        rgba(211,229,214,.35);
+        var(--text-faint);
 
 }
 
@@ -1892,7 +1892,7 @@ body {
 
     background: rgba(255,255,255,.04);
 
-    color: rgba(222,237,225,.52);
+    color: var(--text-muted);
 
     font-size: 11px;
 
@@ -2072,7 +2072,7 @@ body {
             rgba(255,255,255,.07)
         );
 
-    color: #c2e0b7;
+    color: var(--accent);
 
     font-size: 20px;
 
@@ -2108,7 +2108,7 @@ body {
 
 .status-active {
 
-    color: #a9ddb0;
+    color: var(--accent);
 
     background: rgba(94, 170, 106, .10);
 
@@ -2119,7 +2119,7 @@ body {
 
 .status-inactive {
 
-    color: #abb7ad;
+    color: var(--accent);
 
     background: rgba(190,190,190,.06);
 
@@ -2166,7 +2166,7 @@ body {
 
     margin-bottom: 5px;
 
-    color: rgba(208,226,211,.35);
+    color: var(--text-faint);
 
     font-size: 9px;
 
@@ -2181,7 +2181,7 @@ body {
 
     margin: 0 0 11px;
 
-    color: #f3faf5;
+    color: var(--text-primary);
 
     font-size: 19px;
 
@@ -2207,7 +2207,7 @@ body {
 
     margin-bottom: 5px;
 
-    color: rgba(214,230,217,.47);
+    color: var(--text-muted);
 
     font-size: 11px;
 
@@ -2220,7 +2220,7 @@ body {
 
     width: 13px;
 
-    color: #7fa488;
+    color: var(--accent);
 
     font-size: 10px;
 
@@ -2286,7 +2286,7 @@ body {
 
     border-radius: 10px;
 
-    color: #96bd91;
+    color: var(--accent);
 
     background: rgba(130, 181, 124, .09);
 
@@ -2299,7 +2299,7 @@ body {
 
     margin-bottom: 2px;
 
-    color: rgba(202,221,205,.35);
+    color: var(--text-faint);
 
     font-size: 9px;
 
@@ -2318,7 +2318,7 @@ body {
 
     margin: 0;
 
-    color: rgba(231,241,233,.68);
+    color: var(--text-secondary);
 
     font-size: 11px;
 
@@ -2378,7 +2378,7 @@ body {
 
     flex: 1;
 
-    color: #d7ecd5 !important;
+    color: var(--text-primary) !important;
 
     background:
         linear-gradient(
@@ -2398,7 +2398,7 @@ body {
 
     width: 42px;
 
-    color: #a7bdab !important;
+    color: var(--accent) !important;
 
     background:
         rgba(255,255,255,.04);
@@ -2482,7 +2482,7 @@ body {
 
     background: rgba(255,255,255,.07);
 
-    color: #a7cb9d;
+    color: var(--accent);
 
     font-size: 34px;
 
@@ -2538,7 +2538,7 @@ body {
 
     margin-top: 22px;
 
-    color: #eff8f1;
+    color: var(--text-primary);
 
     font-size: 20px;
 
@@ -2551,7 +2551,7 @@ body {
 
     margin: 8px auto 22px;
 
-    color: rgba(218,234,221,.45);
+    color: var(--text-muted);
 
     font-size: 12px;
 
@@ -2575,7 +2575,7 @@ body {
 
     text-align: center;
 
-    color: #fff;
+    color: var(--text-primary);
 
 }
 
@@ -2598,7 +2598,7 @@ body {
 
     background: rgba(255,255,255,.07);
 
-    color: #9fc596;
+    color: var(--accent);
 
 }
 
@@ -2613,7 +2613,7 @@ body {
 .no-results p {
 
     color:
-        rgba(221,234,223,.42);
+        var(--text-muted);
 
     font-size: 12px;
 
@@ -2812,7 +2812,7 @@ body {
 
     margin-bottom: 5px;
 
-    color: #8eb49a;
+    color: var(--accent);
 
     font-size: 9px;
 
@@ -2827,7 +2827,7 @@ body {
 
     margin: 0;
 
-    color: #f3faf5;
+    color: var(--text-primary);
 
     font-size: 30px;
 
@@ -2842,7 +2842,7 @@ body {
 
     margin: 6px 0 0;
 
-    color: rgba(216,234,220,.47);
+    color: var(--text-muted);
 
     font-size: 12px;
 
@@ -2874,7 +2874,7 @@ body {
 
     backdrop-filter: blur(18px);
 
-    color: rgba(228,240,230,.68) !important;
+    color: var(--text-secondary) !important;
 
     font-size: 10px;
 
@@ -2891,7 +2891,7 @@ body {
 
     border-color: rgba(170,208,162,.19);
 
-    color: #dff0df !important;
+    color: var(--text-primary) !important;
 
     transform: translateY(-2px);
 
@@ -3106,7 +3106,7 @@ body {
 
     background: rgba(143,187,137,.10);
 
-    color: #a3c99a;
+    color: var(--accent);
 
     font-size: 17px;
 
@@ -3117,7 +3117,7 @@ body {
 
     display: block;
 
-    color: rgba(182,210,187,.38);
+    color: var(--text-faint);
 
     font-size: 7px;
 
@@ -3130,7 +3130,7 @@ body {
 
     margin: 3px 0;
 
-    color: #f0f8f2;
+    color: var(--text-primary);
 
     font-size: 18px;
 
@@ -3143,7 +3143,7 @@ body {
 
     margin: 0;
 
-    color: rgba(211,229,215,.36);
+    color: var(--text-faint);
 
     font-size: 8px;
 
@@ -3160,7 +3160,7 @@ body {
 
     background: rgba(255,255,255,.03);
 
-    color: rgba(215,231,218,.33);
+    color: var(--text-faint);
 
     font-size: 7px;
 
@@ -3172,7 +3172,7 @@ body {
 .required-badge span,
 .required {
 
-    color: #a9ca9e;
+    color: var(--accent);
 
 }
 
@@ -3234,7 +3234,7 @@ body {
 
     background: rgba(145,187,139,.08);
 
-    color: #99bd93;
+    color: var(--accent);
 
     font-size: 8px;
 
@@ -3247,7 +3247,7 @@ body {
 
     margin: 0;
 
-    color: rgba(238,247,240,.82);
+    color: var(--text-secondary);
 
     font-size: 12px;
 
@@ -3260,7 +3260,7 @@ body {
 
     margin: 2px 0 0;
 
-    color: rgba(207,226,211,.29);
+    color: var(--text-faint);
 
     font-size: 7px;
 
@@ -3285,7 +3285,7 @@ body {
 
     margin-bottom: 8px;
 
-    color: rgba(224,238,226,.58);
+    color: var(--text-muted);
 
     font-size: 9px;
 
@@ -3355,7 +3355,7 @@ body {
     justify-content: center;
 
     color:
-        rgba(158,193,161,.46);
+        var(--text-muted);
 
     font-size: 11px;
 
@@ -3379,7 +3379,7 @@ body {
 
     background: transparent;
 
-    color: #edf7ef;
+    color: var(--text-primary);
 
     font-family: 'Poppins', sans-serif;
 
@@ -3391,7 +3391,7 @@ body {
 .liquid-input input::placeholder {
 
     color:
-        rgba(204,224,208,.23);
+        var(--text-faint);
 
 }
 
@@ -3414,7 +3414,7 @@ body {
 
     background: #13291c;
 
-    color: #eef7f0;
+    color: var(--text-primary);
 
 }
 
@@ -3480,7 +3480,7 @@ body {
     justify-content: center;
 
     color:
-        rgba(158,193,161,.46);
+        var(--text-muted);
 
     font-size: 11px;
 
@@ -3503,7 +3503,7 @@ body {
 
     background: transparent;
 
-    color: #edf7ef;
+    color: var(--text-primary);
 
     font-family: 'Poppins', sans-serif;
 
@@ -3517,7 +3517,7 @@ body {
 .liquid-textarea textarea::placeholder {
 
     color:
-        rgba(204,224,208,.23);
+        var(--text-faint);
 
 }
 
@@ -3531,7 +3531,7 @@ body {
     bottom: 9px;
 
     color:
-        rgba(211,229,215,.26);
+        var(--text-faint);
 
     font-size: 7px;
 
@@ -3561,7 +3561,7 @@ body {
 
     margin-top: 6px;
 
-    color: #d88686;
+    color: var(--accent);
 
     font-size: 8px;
 
@@ -3616,7 +3616,7 @@ body {
 
     background: rgba(255,255,255,.035);
 
-    color: rgba(220,235,223,.47) !important;
+    color: var(--text-muted) !important;
 
     font-size: 9px;
 
@@ -3631,7 +3631,7 @@ body {
 
     background: rgba(255,255,255,.065);
 
-    color: #e8f4ea !important;
+    color: var(--text-primary) !important;
 
 }
 
@@ -3893,7 +3893,7 @@ body {
     display: block;
 
     color:
-        rgba(178,207,183,.36);
+        var(--text-faint);
 
     font-size: 7px;
 
@@ -3933,7 +3933,7 @@ body {
             rgba(255,255,255,.045)
         );
 
-    color: #b4d4aa;
+    color: var(--accent);
 
     font-size: 25px;
 
@@ -3955,7 +3955,7 @@ body {
 
     text-align: center;
 
-    color: #eff8f1;
+    color: var(--text-primary);
 
     font-size: 16px;
 
@@ -3975,7 +3975,7 @@ body {
     text-align: center;
 
     color:
-        rgba(211,229,214,.37);
+        var(--text-faint);
 
     font-size: 8px;
 
@@ -4005,7 +4005,7 @@ body {
     background:
         rgba(91,164,103,.08);
 
-    color: #97ca9f;
+    color: var(--accent);
 
     font-size: 7px;
 
@@ -4086,7 +4086,7 @@ body {
     background:
         rgba(143,187,137,.07);
 
-    color: #8fb28b;
+    color: var(--accent);
 
     font-size: 9px;
 
@@ -4100,7 +4100,7 @@ body {
     overflow: hidden;
 
     color:
-        rgba(216,231,219,.42);
+        var(--text-muted);
 
     font-size: 8px;
 
@@ -4161,7 +4161,7 @@ body {
     background:
         rgba(143,187,137,.09);
 
-    color: #9fc298;
+    color: var(--accent);
 
 }
 
@@ -4171,7 +4171,7 @@ body {
     display: block;
 
     color:
-        rgba(181,209,186,.34);
+        var(--text-faint);
 
     font-size: 6px;
 
@@ -4184,7 +4184,7 @@ body {
 
     margin: 2px 0 0;
 
-    color: #eaf5ec;
+    color: var(--text-primary);
 
     font-size: 11px;
 
@@ -4196,7 +4196,7 @@ body {
     margin: 15px 0;
 
     color:
-        rgba(211,228,214,.35);
+        var(--text-faint);
 
     font-size: 8px;
 
@@ -4219,7 +4219,7 @@ body {
 .tip-list div {
 
     color:
-        rgba(218,234,221,.46);
+        var(--text-muted);
 
     font-size: 8px;
 
@@ -4245,7 +4245,7 @@ body {
     background:
         rgba(117,176,121,.08);
 
-    color: #91be95;
+    color: var(--accent);
 
     font-size: 6px;
 
@@ -4297,7 +4297,7 @@ body {
     background:
         rgba(137,181,133,.07);
 
-    color: #8fad8c;
+    color: var(--accent);
 
     font-size: 9px;
 
@@ -4309,7 +4309,7 @@ body {
     margin: 0;
 
     color:
-        rgba(205,224,209,.31);
+        var(--text-faint);
 
     font-size: 7px;
 
@@ -4325,7 +4325,7 @@ body {
     margin-bottom: 2px;
 
     color:
-        rgba(231,241,233,.59);
+        var(--text-muted);
 
     font-size: 8px;
 
@@ -4528,7 +4528,7 @@ body {
 
     display: block;
 
-    color: #8eb49a;
+    color: var(--accent);
 
     font-size: 9px;
 
@@ -4543,7 +4543,7 @@ body {
 
     margin: 0;
 
-    color: #f4faf5;
+    color: var(--text-primary);
 
     font-size: 30px;
 
@@ -4556,7 +4556,7 @@ body {
 
     margin: 5px 0 0;
 
-    color: rgba(216,234,220,.44);
+    color: var(--text-muted);
 
     font-size: 11px;
 
@@ -4586,7 +4586,7 @@ body {
 
     background: rgba(255,255,255,.035);
 
-    color: rgba(228,240,230,.60) !important;
+    color: var(--text-muted) !important;
 
     font-size: 9px;
 
@@ -4753,14 +4753,14 @@ body {
     background:
         rgba(143,187,137,.09);
 
-    color: #9ec198;
+    color: var(--accent);
 
 }
 
 
 .form-heading span {
 
-    color: rgba(183,210,188,.34);
+    color: var(--text-faint);
 
     font-size: 7px;
 
@@ -4773,7 +4773,7 @@ body {
 
     margin: 3px 0;
 
-    color: #eef7f0;
+    color: var(--text-primary);
 
     font-size: 18px;
 
@@ -4784,7 +4784,7 @@ body {
 
     margin: 0;
 
-    color: rgba(208,227,212,.31);
+    color: var(--text-faint);
 
     font-size: 8px;
 
@@ -4847,7 +4847,7 @@ body {
     background:
         rgba(145,187,139,.08);
 
-    color: #98bc93;
+    color: var(--accent);
 
     font-size: 8px;
 
@@ -4858,7 +4858,7 @@ body {
 
     margin: 0;
 
-    color: rgba(239,248,241,.80);
+    color: var(--text-secondary);
 
     font-size: 12px;
 
@@ -4869,7 +4869,7 @@ body {
 
     margin: 2px 0 0;
 
-    color: rgba(207,226,211,.28);
+    color: var(--text-faint);
 
     font-size: 7px;
 
@@ -4892,7 +4892,7 @@ body {
 
     margin-bottom: 8px;
 
-    color: rgba(224,238,226,.58);
+    color: var(--text-muted);
 
     font-size: 9px;
 
@@ -4901,7 +4901,7 @@ body {
 
 .form-group label span {
 
-    color: #a7ca9c;
+    color: var(--accent);
 
 }
 
@@ -4952,7 +4952,7 @@ body {
     justify-content: center;
 
     color:
-        rgba(158,193,161,.46);
+        var(--text-muted);
 
     font-size: 11px;
 
@@ -4976,7 +4976,7 @@ body {
 
     background: transparent;
 
-    color: #edf7ef;
+    color: var(--text-primary);
 
     font-family: 'Poppins', sans-serif;
 
@@ -4996,7 +4996,7 @@ body {
 
     background: #13291c;
 
-    color: white;
+    color: var(--text-primary);
 
 }
 
@@ -5036,7 +5036,7 @@ body {
     padding-top: 17px;
 
     color:
-        rgba(158,193,161,.46);
+        var(--text-muted);
 
 }
 
@@ -5061,7 +5061,7 @@ body {
 
     background: transparent;
 
-    color: #edf7ef;
+    color: var(--text-primary);
 
     font-family: 'Poppins', sans-serif;
 
@@ -5079,7 +5079,7 @@ body {
     bottom: 9px;
 
     color:
-        rgba(211,229,215,.25);
+        var(--text-faint);
 
     font-size: 7px;
 
@@ -5203,7 +5203,7 @@ body {
     display: block;
 
     color:
-        rgba(236,246,238,.72);
+        var(--text-secondary);
 
     font-size: 8px;
 
@@ -5213,7 +5213,7 @@ body {
 .switch-text small {
 
     color:
-        rgba(206,225,210,.27);
+        var(--text-faint);
 
     font-size: 6px;
 
@@ -5235,7 +5235,7 @@ body {
 
     margin-top: 5px;
 
-    color: #d88b8b;
+    color: var(--accent);
 
     font-size: 7px;
 
@@ -5281,7 +5281,7 @@ body {
         1px solid rgba(255,255,255,.08);
 
     color:
-        rgba(221,236,224,.45) !important;
+        var(--text-muted) !important;
 
     background:
         rgba(255,255,255,.03);
@@ -5413,7 +5413,7 @@ body {
     text-align: left;
 
     color:
-        rgba(182,210,187,.33);
+        var(--text-faint);
 
     font-size: 6px;
 
@@ -5444,7 +5444,7 @@ body {
     background:
         rgba(161,201,153,.13);
 
-    color: #b4d4aa;
+    color: var(--accent);
 
     font-size: 24px;
 
@@ -5457,7 +5457,7 @@ body {
 
     margin: 0;
 
-    color: #eff8f1;
+    color: var(--text-primary);
 
     font-size: 15px;
 
@@ -5469,7 +5469,7 @@ body {
     margin: 4px 0 0;
 
     color:
-        rgba(211,229,214,.37);
+        var(--text-faint);
 
     font-size: 8px;
 
@@ -5499,7 +5499,7 @@ body {
 
 .preview-state.active {
 
-    color: #99ce9f;
+    color: var(--accent);
 
     background:
         rgba(77,157,90,.08);
@@ -5509,7 +5509,7 @@ body {
 
 .preview-state.inactive {
 
-    color: #adb7af;
+    color: var(--accent);
 
     background:
         rgba(255,255,255,.03);
@@ -5583,7 +5583,7 @@ body {
     background:
         rgba(143,187,137,.07);
 
-    color: #90b18c;
+    color: var(--accent);
 
     font-size: 8px;
 
@@ -5601,7 +5601,7 @@ body {
     white-space: nowrap;
 
     color:
-        rgba(215,232,218,.42);
+        var(--text-muted);
 
     font-size: 8px;
 
@@ -5649,7 +5649,7 @@ body {
     background:
         rgba(140,183,135,.07);
 
-    color: #8eac8b;
+    color: var(--accent);
 
 }
 
@@ -5659,7 +5659,7 @@ body {
     margin: 0;
 
     color:
-        rgba(205,225,209,.29);
+        var(--text-faint);
 
     font-size: 7px;
 
@@ -5671,7 +5671,7 @@ body {
     display: block;
 
     color:
-        rgba(232,242,234,.59);
+        var(--text-muted);
 
     font-size: 8px;
 
@@ -5814,7 +5814,7 @@ body {
 
     margin-bottom: 5px;
 
-    color: #8fb59a;
+    color: var(--accent);
 
     font-size: 9px;
 
@@ -5829,7 +5829,7 @@ body {
 
     margin: 0;
 
-    color: #f4faf5;
+    color: var(--text-primary);
 
     font-size: 30px;
 
@@ -5842,7 +5842,7 @@ body {
 
     margin: 6px 0 0;
 
-    color: rgba(217,233,220,.45);
+    color: var(--text-muted);
 
     font-size: 11px;
 
@@ -5927,7 +5927,7 @@ body {
 
     background: rgba(255,255,255,.035);
 
-    color: rgba(225,239,228,.55) !important;
+    color: var(--text-muted) !important;
 
 }
 
@@ -5936,7 +5936,7 @@ body {
 
     transform: translateY(-2px);
 
-    color: #edf7ef !important;
+    color: var(--text-primary) !important;
 
     background: rgba(255,255,255,.065);
 
@@ -6033,7 +6033,7 @@ body {
 
     background: rgba(81,145,88,.10);
 
-    color: #e0f3e3;
+    color: var(--text-primary);
 
 }
 
@@ -6054,7 +6054,7 @@ body {
 
     background: rgba(154,207,158,.16);
 
-    color: #a4d2a5;
+    color: var(--accent);
 
 }
 
@@ -6070,7 +6070,7 @@ body {
 
 .glass-alert span {
 
-    color: rgba(219,239,223,.51);
+    color: var(--text-muted);
 
     font-size: 8px;
 
@@ -6193,7 +6193,7 @@ body {
             rgba(255,255,255,.045)
         );
 
-    color: #b8d8ae;
+    color: var(--accent);
 
     font-size: 26px;
 
@@ -6207,7 +6207,7 @@ body {
 
 .hero-eyebrow {
 
-    color: #90b498;
+    color: var(--accent);
 
     font-size: 8px;
 
@@ -6220,7 +6220,7 @@ body {
 
     margin: 5px 0 6px;
 
-    color: #f4faf5;
+    color: var(--text-primary);
 
     font-size: 27px;
 
@@ -6233,7 +6233,7 @@ body {
 
     margin: 0;
 
-    color: rgba(214,231,217,.42);
+    color: var(--text-muted);
 
     font-size: 9px;
 
@@ -6244,7 +6244,7 @@ body {
 
     margin-right: 5px;
 
-    color: #89ad8b;
+    color: var(--accent);
 
 }
 
@@ -6284,7 +6284,7 @@ body {
 
 .status-badge.active {
 
-    color: #9ed2a5;
+    color: var(--accent);
 
     background: rgba(81,161,95,.08);
 
@@ -6293,7 +6293,7 @@ body {
 
 .status-badge.inactive {
 
-    color: #adb8af;
+    color: var(--accent);
 
     background: rgba(255,255,255,.035);
 
@@ -6317,7 +6317,7 @@ body {
 
 .soft-badge {
 
-    color: rgba(216,232,219,.43);
+    color: var(--text-muted);
 
     background: rgba(255,255,255,.025);
 
@@ -6363,7 +6363,7 @@ body {
 
     display: block;
 
-    color: rgba(191,214,195,.30);
+    color: var(--text-faint);
 
     font-size: 6px;
 
@@ -6378,7 +6378,7 @@ body {
 
     margin-top: 4px;
 
-    color: #eaf5ec;
+    color: var(--text-primary);
 
     font-size: 14px;
 
@@ -6399,7 +6399,7 @@ body {
 
     justify-content: center;
 
-    color: rgba(166,204,153,.28);
+    color: var(--text-faint);
 
     font-size: 55px;
 
@@ -6530,7 +6530,7 @@ body {
 
     margin-bottom: 3px;
 
-    color: rgba(182,210,187,.34);
+    color: var(--text-faint);
 
     font-size: 7px;
 
@@ -6546,7 +6546,7 @@ body {
 
     margin: 0;
 
-    color: #edf7ef;
+    color: var(--text-primary);
 
     font-size: 15px;
 
@@ -6575,7 +6575,7 @@ body {
 
     background: rgba(144,187,138,.08);
 
-    color: #9bbf95;
+    color: var(--accent);
 
 }
 
@@ -6633,7 +6633,7 @@ body {
 
     background: rgba(142,185,136,.07);
 
-    color: #91b38d;
+    color: var(--accent);
 
     font-size: 9px;
 
@@ -6644,7 +6644,7 @@ body {
 
     display: block;
 
-    color: rgba(203,222,207,.28);
+    color: var(--text-faint);
 
     font-size: 6px;
 
@@ -6657,7 +6657,7 @@ body {
 
     margin-top: 2px;
 
-    color: rgba(235,245,237,.68);
+    color: var(--text-secondary);
 
     font-size: 8px;
 
@@ -6698,14 +6698,14 @@ body {
 
     background: rgba(144,187,138,.09);
 
-    color: #9fc299;
+    color: var(--accent);
 
 }
 
 
 .goal-label {
 
-    color: rgba(182,210,187,.31);
+    color: var(--text-faint);
 
     font-size: 7px;
 
@@ -6718,7 +6718,7 @@ body {
 
     margin: 4px 0 8px;
 
-    color: #edf7ef;
+    color: var(--text-primary);
 
     font-size: 14px;
 
@@ -6729,7 +6729,7 @@ body {
 
     margin: 0;
 
-    color: rgba(210,229,214,.40);
+    color: var(--text-muted);
 
     font-size: 8px;
 
@@ -6772,7 +6772,7 @@ body {
 
     background: rgba(141,182,136,.07);
 
-    color: #8fac8d;
+    color: var(--accent);
 
     font-size: 9px;
 
@@ -6783,7 +6783,7 @@ body {
 
     margin: 0;
 
-    color: rgba(206,225,210,.28);
+    color: var(--text-faint);
 
     font-size: 7px;
 
@@ -6798,7 +6798,7 @@ body {
 
     margin-bottom: 2px;
 
-    color: rgba(232,242,234,.57);
+    color: var(--text-muted);
 
     font-size: 8px;
 
@@ -6861,7 +6861,7 @@ body {
 
     background: rgba(144,187,138,.07);
 
-    color: #96b892;
+    color: var(--accent);
 
     font-size: 9px;
 
@@ -6872,7 +6872,7 @@ body {
 
     display: block;
 
-    color: rgba(201,221,205,.28);
+    color: var(--text-faint);
 
     font-size: 6px;
 
@@ -6885,7 +6885,7 @@ body {
 
     margin-top: 3px;
 
-    color: rgba(238,247,240,.71);
+    color: var(--text-secondary);
 
     font-size: 9px;
 
@@ -6931,7 +6931,7 @@ body {
 
     margin: 2px 0;
 
-    color: #eff8f1;
+    color: var(--text-primary);
 
     font-size: 18px;
 
@@ -6944,7 +6944,7 @@ body {
 
     margin: 0;
 
-    color: rgba(211,229,214,.34);
+    color: var(--text-faint);
 
     font-size: 8px;
 
@@ -6961,7 +6961,7 @@ body {
 
     background: rgba(255,255,255,.03);
 
-    color: rgba(205,225,209,.39);
+    color: var(--text-faint);
 
     font-size: 7px;
 
@@ -7011,7 +7011,7 @@ body {
 
     background: rgba(141,183,136,.08);
 
-    color: #9abe94;
+    color: var(--accent);
 
     font-size: 10px;
 
@@ -7020,7 +7020,7 @@ body {
 
 .metric-glass > span {
 
-    color: rgba(192,215,197,.30);
+    color: var(--text-faint);
 
     font-size: 6px;
 
@@ -7033,7 +7033,7 @@ body {
 
     margin: 5px 0 0;
 
-    color: #eef7f0;
+    color: var(--text-primary);
 
     font-size: 22px;
 
@@ -7044,7 +7044,7 @@ body {
 
 .metric-glass h3 small {
 
-    color: rgba(206,226,210,.35);
+    color: var(--text-faint);
 
     font-size: 8px;
 
@@ -7093,7 +7093,7 @@ body {
 
     background: rgba(144,187,138,.08);
 
-    color: #9abc94;
+    color: var(--accent);
 
     font-size: 23px;
 
@@ -7103,7 +7103,7 @@ body {
 .empty-evaluation-glass > span,
 .chart-waiting-glass > span {
 
-    color: rgba(181,209,186,.32);
+    color: var(--text-faint);
 
     font-size: 7px;
 
@@ -7117,7 +7117,7 @@ body {
 
     margin: 5px 0 8px;
 
-    color: #edf7ef;
+    color: var(--text-primary);
 
     font-size: 17px;
 
@@ -7131,7 +7131,7 @@ body {
 
     margin: 0 auto 18px;
 
-    color: rgba(210,228,213,.36);
+    color: var(--text-faint);
 
     font-size: 8px;
 
@@ -7193,7 +7193,7 @@ body {
 
 .progress-glass-card > span {
 
-    color: rgba(190,214,194,.28);
+    color: var(--text-faint);
 
     font-size: 6px;
 
@@ -7206,7 +7206,7 @@ body {
 
     margin: 7px 0 4px;
 
-    color: #eef7f0;
+    color: var(--text-primary);
 
     font-size: 21px;
 
@@ -7219,7 +7219,7 @@ body {
 
     font-size: 8px;
 
-    color: rgba(210,229,214,.34);
+    color: var(--text-faint);
 
     font-weight: 400;
 
@@ -7230,7 +7230,7 @@ body {
 
     margin: 0;
 
-    color: rgba(208,226,211,.29);
+    color: var(--text-faint);
 
     font-size: 7px;
 
@@ -7239,14 +7239,14 @@ body {
 
 .progress-positive {
 
-    color: #91c99a !important;
+    color: var(--accent) !important;
 
 }
 
 
 .progress-warning {
 
-    color: #d5ba74 !important;
+    color: var(--accent) !important;
 
 }
 
@@ -7274,7 +7274,7 @@ body {
 
     margin: 5px 0 0;
 
-    color: rgba(208,228,212,.32);
+    color: var(--text-faint);
 
     font-size: 8px;
 
@@ -7323,7 +7323,7 @@ body {
 
     text-align: center;
 
-    color: rgba(210,228,214,.33);
+    color: var(--text-faint);
 
     font-size: 8px;
 
@@ -7336,7 +7336,7 @@ body {
 
     margin-bottom: 8px;
 
-    color: #8fad8b;
+    color: var(--accent);
 
     font-size: 22px;
 
@@ -7365,7 +7365,7 @@ body {
 
     border: none;
 
-    color: rgba(190,214,194,.29);
+    color: var(--text-faint);
 
     font-size: 7px;
 
@@ -7402,7 +7402,7 @@ body {
 
     border-bottom: 1px solid rgba(255,255,255,.04);
 
-    color: rgba(222,236,225,.55);
+    color: var(--text-muted);
 
     font-size: 8px;
 
@@ -7431,7 +7431,7 @@ body {
 
 .liquid-table td strong {
 
-    color: #eaf5ec;
+    color: var(--text-primary);
 
     font-weight: 500;
 
@@ -7440,7 +7440,7 @@ body {
 
 .liquid-table td small {
 
-    color: rgba(206,225,210,.30);
+    color: var(--text-faint);
 
     font-size: 7px;
 
@@ -7470,7 +7470,7 @@ body {
 
 .table-date div {
 
-    color: #aaca9f;
+    color: var(--accent);
 
     font-size: 13px;
 
@@ -7483,7 +7483,7 @@ body {
 
 .table-date span {
 
-    color: rgba(207,226,211,.31);
+    color: var(--text-faint);
 
     font-size: 6px;
 
@@ -7723,7 +7723,7 @@ body {
 
     margin-bottom: 6px;
 
-    color: #8eb59a;
+    color: var(--accent);
 
     font-size: 10px;
 
@@ -7738,7 +7738,7 @@ body {
 
     margin: 0;
 
-    color: #f4faf5;
+    color: var(--text-primary);
 
     font-size: 32px;
 
@@ -7751,7 +7751,7 @@ body {
 
     margin: 6px 0 0;
 
-    color: rgba(218, 235, 222, .52);
+    color: var(--text-muted);
 
     font-size: 13px;
 
@@ -7957,7 +7957,7 @@ body {
 
     backdrop-filter: blur(20px);
 
-    color: #e1f4e3;
+    color: var(--text-primary);
 
 }
 
@@ -7994,7 +7994,7 @@ body {
 
 .glass-alert span {
 
-    color: rgba(225,245,228,.65);
+    color: var(--text-secondary);
 
     font-size: 12px;
 
@@ -8124,7 +8124,7 @@ body {
 
         );
 
-    color: #b1d3a4;
+    color: var(--accent);
 
     font-size: 29px;
 
@@ -8145,7 +8145,7 @@ body {
 
     letter-spacing: 1.8px;
 
-    color: #93b69b;
+    color: var(--accent);
 
 }
 
@@ -8154,7 +8154,7 @@ body {
 
     margin: 6px 0 9px;
 
-    color: #f4faf5;
+    color: var(--text-primary);
 
     font-size: 33px;
 
@@ -8165,7 +8165,7 @@ body {
 
 .hero-content h2 span {
 
-    color: #aacd9c;
+    color: var(--accent);
 
     font-weight: 600;
 
@@ -8178,7 +8178,7 @@ body {
 
     margin: 0;
 
-    color: rgba(221,238,225,.54);
+    color: var(--text-muted);
 
     font-size: 13px;
 
@@ -8206,7 +8206,7 @@ body {
 
     bottom: -3px;
 
-    color: rgba(166,203,151,.38);
+    color: var(--text-faint);
 
     font-size: 108px;
 
@@ -8231,7 +8231,7 @@ body {
 
     backdrop-filter: blur(15px);
 
-    color: #a6cd9b;
+    color: var(--accent);
 
     box-shadow:
 
@@ -8344,35 +8344,35 @@ body {
 
     background: rgba(145,187,138,.10);
 
-    color: #a8cd9d;
+    color: var(--accent);
 
 }
 
 
 .pending-icon {
 
-    color: #e5c676;
+    color: var(--accent);
 
 }
 
 
 .confirmed-icon {
 
-    color: #91d49d;
+    color: var(--accent);
 
 }
 
 
 .completed-icon {
 
-    color: #8cc3c9;
+    color: var(--accent);
 
 }
 
 
 .liquid-stat span {
 
-    color: rgba(220,236,223,.43);
+    color: var(--text-muted);
 
     font-size: 10px;
 
@@ -8383,7 +8383,7 @@ body {
 
     margin: 2px 0 0;
 
-    color: #f5faf6;
+    color: var(--text-primary);
 
     font-size: 24px;
 
@@ -8471,7 +8471,7 @@ body {
 
     margin-bottom: 5px;
 
-    color: rgba(174,205,178,.48);
+    color: var(--text-muted);
 
     font-size: 9px;
 
@@ -8484,7 +8484,7 @@ body {
 
     margin: 0;
 
-    color: #f2faf4;
+    color: var(--text-primary);
 
     font-size: 23px;
 
@@ -8522,7 +8522,7 @@ body {
 
     background: rgba(255,255,255,.055);
 
-    color: #b2c7b5;
+    color: var(--accent);
 
     outline: none !important;
 
@@ -8554,7 +8554,7 @@ body {
 
     background: rgba(143,187,136,.12);
 
-    color: #acd0a6;
+    color: var(--accent);
 
     font-size: 11px;
 
@@ -8589,7 +8589,7 @@ body {
 
     text-align: center;
 
-    color: rgba(207,225,211,.34);
+    color: var(--text-faint);
 
     font-size: 9px;
 
@@ -8657,7 +8657,7 @@ body {
 
     border-radius: 10px;
 
-    color: rgba(234,244,236,.68);
+    color: var(--text-secondary);
 
     font-size: 11px;
 
@@ -8727,7 +8727,7 @@ body {
 
     background: rgba(136,184,132,.13);
 
-    color: rgba(224,240,226,.72);
+    color: var(--text-secondary);
 
     font-size: 8px;
 
@@ -8746,7 +8746,7 @@ body {
 
     padding-left: 4px;
 
-    color: #9bc197;
+    color: var(--accent);
 
     font-size: 8px;
 
@@ -8765,7 +8765,7 @@ body {
 
     border-top: 1px solid rgba(255,255,255,.07);
 
-    color: rgba(211,228,214,.40);
+    color: var(--text-muted);
 
     font-size: 9px;
 
@@ -8881,7 +8881,7 @@ body {
 
 .today-label {
 
-    color: #8fb395;
+    color: var(--accent);
 
     font-size: 9px;
 
@@ -8915,7 +8915,7 @@ body {
 
     font-weight: 300;
 
-    color: #e9f5eb;
+    color: var(--text-primary);
 
 }
 
@@ -8924,7 +8924,7 @@ body {
 
     margin: 0;
 
-    color: #b5d3b0;
+    color: var(--accent);
 
     font-size: 17px;
 
@@ -8935,7 +8935,7 @@ body {
 
     margin: 3px 0 0;
 
-    color: rgba(220,235,223,.42);
+    color: var(--text-muted);
 
     font-size: 11px;
 
@@ -8958,7 +8958,7 @@ body {
 
     border-top: 1px solid rgba(255,255,255,.07);
 
-    color: rgba(215,231,218,.44);
+    color: var(--text-muted);
 
     font-size: 10px;
 
@@ -8971,7 +8971,7 @@ body {
 
     margin-top: 2px;
 
-    color: #8fb88e;
+    color: var(--accent);
 
 }
 
@@ -9024,7 +9024,7 @@ body {
 
 .upcoming-title span {
 
-    color: rgba(190,215,194,.36);
+    color: var(--text-faint);
 
     font-size: 8px;
 
@@ -9037,7 +9037,7 @@ body {
 
     margin: 3px 0 0;
 
-    color: #f0f8f1;
+    color: var(--text-primary);
 
     font-size: 17px;
 
@@ -9060,7 +9060,7 @@ body {
 
     background: rgba(145,185,139,.10);
 
-    color: #9fc398;
+    color: var(--accent);
 
 }
 
@@ -9105,7 +9105,7 @@ body {
 
 .appointment-time span {
 
-    color: #b4d0af;
+    color: var(--accent);
 
     font-size: 11px;
 
@@ -9118,7 +9118,7 @@ body {
 
     margin-top: 2px;
 
-    color: rgba(214,230,216,.37);
+    color: var(--text-faint);
 
     font-size: 8px;
 
@@ -9138,7 +9138,7 @@ body {
 
     margin: 1px 0 3px;
 
-    color: #eef7f0;
+    color: var(--text-primary);
 
     font-size: 12px;
 
@@ -9153,7 +9153,7 @@ body {
 
     margin: 0 0 5px;
 
-    color: rgba(212,228,215,.42);
+    color: var(--text-muted);
 
     font-size: 9px;
 
@@ -9181,7 +9181,7 @@ body {
 
     background: rgba(99,174,111,.10);
 
-    color: #9bd1a4;
+    color: var(--accent);
 
 }
 
@@ -9190,7 +9190,7 @@ body {
 
     background: rgba(205,172,85,.09);
 
-    color: #dbc373;
+    color: var(--accent);
 
 }
 
@@ -9199,7 +9199,7 @@ body {
 
     background: rgba(95,166,176,.09);
 
-    color: #93c5ca;
+    color: var(--accent);
 
 }
 
@@ -9208,7 +9208,7 @@ body {
 
     background: rgba(199,93,93,.09);
 
-    color: #d78b8b;
+    color: var(--accent);
 
 }
 
@@ -9235,7 +9235,7 @@ body {
 
     background: rgba(145,187,139,.09);
 
-    color: #aad0a5 !important;
+    color: var(--accent) !important;
 
     font-size: 10px;
 
@@ -9284,14 +9284,14 @@ body {
 
     background: rgba(255,255,255,.05);
 
-    color: #9fc097;
+    color: var(--accent);
 
 }
 
 
 .empty-upcoming h5 {
 
-    color: #edf6ee;
+    color: var(--text-primary);
 
     font-size: 13px;
 
@@ -9300,7 +9300,7 @@ body {
 
 .empty-upcoming p {
 
-    color: rgba(211,229,214,.38);
+    color: var(--text-faint);
 
     font-size: 9px;
 
@@ -9361,7 +9361,7 @@ body {
 
 .selected-header span {
 
-    color: rgba(189,214,193,.35);
+    color: var(--text-faint);
 
     font-size: 8px;
 
@@ -9374,7 +9374,7 @@ body {
 
     margin: 3px 0 0;
 
-    color: #f0f8f2;
+    color: var(--text-primary);
 
     font-size: 17px;
 
@@ -9397,7 +9397,7 @@ body {
 
     background: rgba(145,186,139,.10);
 
-    color: #a5c99d;
+    color: var(--accent);
 
 }
 
@@ -9436,7 +9436,7 @@ body {
 
 .selected-appointment-time {
 
-    color: #a8ca9f;
+    color: var(--accent);
 
     font-size: 10px;
 
@@ -9449,7 +9449,7 @@ body {
 
     margin: 7px 0 4px;
 
-    color: #edf7ef;
+    color: var(--text-primary);
 
     font-size: 13px;
 
@@ -9460,7 +9460,7 @@ body {
 
     margin: 0;
 
-    color: rgba(214,229,216,.42);
+    color: var(--text-muted);
 
     font-size: 9px;
 
@@ -9481,7 +9481,7 @@ body {
 
         rgba(143,184,137,.10);
 
-    color: #9fc399;
+    color: var(--accent);
 
     font-size: 8px;
 
@@ -9542,7 +9542,7 @@ body {
 
         rgba(140, 184, 137, .10);
 
-    color: #afd0a8 !important;
+    color: var(--accent) !important;
 
 }
 
@@ -9563,7 +9563,7 @@ body {
 
         rgba(218, 177, 82, .09);
 
-    color: #e0c578;
+    color: var(--accent);
 
 }
 
@@ -9584,7 +9584,7 @@ body {
 
         rgba(205, 88, 88, .09);
 
-    color: #dd9696;
+    color: var(--accent);
 
 }
 
@@ -9592,7 +9592,7 @@ body {
 
     background: #bc6666;
 
-    color: white;
+    color: var(--text-primary);
 
     transform: translateY(-1px);
 
@@ -9616,7 +9616,7 @@ body {
 
     text-align: center;
 
-    color: rgba(216,231,218,.35);
+    color: var(--text-faint);
 
 }
 
@@ -9625,7 +9625,7 @@ body {
 
     margin-bottom: 8px;
 
-    color: #87a989;
+    color: var(--accent);
 
     font-size: 21px;
 
@@ -9864,7 +9864,7 @@ body {
 
     margin-bottom: 5px;
 
-    color: #8eb49a;
+    color: var(--accent);
 
     font-size: 9px;
 
@@ -9879,7 +9879,7 @@ body {
 
     margin: 0;
 
-    color: #f4faf5;
+    color: var(--text-primary);
 
     font-size: 30px;
 
@@ -9894,7 +9894,7 @@ body {
 
     margin: 5px 0 0;
 
-    color: rgba(216,234,220,.44);
+    color: var(--text-muted);
 
     font-size: 11px;
 
@@ -9928,7 +9928,7 @@ body {
 
     backdrop-filter: blur(18px);
 
-    color: rgba(228,240,230,.60) !important;
+    color: var(--text-muted) !important;
 
     font-size: 9px;
 
@@ -9943,7 +9943,7 @@ body {
 
     transform: translateY(-2px);
 
-    color: #edf7ef !important;
+    color: var(--text-primary) !important;
 
     background: rgba(255,255,255,.065);
 
@@ -10151,7 +10151,7 @@ body {
 
     background: rgba(143,187,137,.09);
 
-    color: #9fc399;
+    color: var(--accent);
 
     font-size: 17px;
 
@@ -10160,7 +10160,7 @@ body {
 
 .heading-main span {
 
-    color: rgba(184,211,189,.35);
+    color: var(--text-faint);
 
     font-size: 7px;
 
@@ -10173,7 +10173,7 @@ body {
 
     margin: 3px 0;
 
-    color: #eef7f0;
+    color: var(--text-primary);
 
     font-size: 18px;
 
@@ -10186,7 +10186,7 @@ body {
 
     margin: 0;
 
-    color: rgba(208,228,212,.32);
+    color: var(--text-faint);
 
     font-size: 8px;
 
@@ -10203,7 +10203,7 @@ body {
 
     background: rgba(255,255,255,.025);
 
-    color: rgba(210,229,214,.31);
+    color: var(--text-faint);
 
     font-size: 7px;
 
@@ -10213,7 +10213,7 @@ body {
 .required-badge span,
 .required {
 
-    color: #a7ca9d;
+    color: var(--accent);
 
 }
 
@@ -10277,7 +10277,7 @@ body {
 
     background: rgba(145,187,139,.08);
 
-    color: #99bd93;
+    color: var(--accent);
 
     font-size: 8px;
 
@@ -10290,7 +10290,7 @@ body {
 
     margin: 0;
 
-    color: rgba(239,248,241,.79);
+    color: var(--text-secondary);
 
     font-size: 12px;
 
@@ -10303,7 +10303,7 @@ body {
 
     margin: 2px 0 0;
 
-    color: rgba(207,226,211,.28);
+    color: var(--text-faint);
 
     font-size: 7px;
 
@@ -10328,7 +10328,7 @@ body {
 
     margin-bottom: 8px;
 
-    color: rgba(224,238,226,.58);
+    color: var(--text-muted);
 
     font-size: 9px;
 
@@ -10394,7 +10394,7 @@ body {
 
     align-items: center;
 
-    color: rgba(158,193,161,.46);
+    color: var(--text-muted);
 
     font-size: 11px;
 
@@ -10418,7 +10418,7 @@ body {
 
     background: transparent;
 
-    color: #edf7ef;
+    color: var(--text-primary);
 
     font-family: 'Poppins', sans-serif;
 
@@ -10429,7 +10429,7 @@ body {
 
 .liquid-input input::placeholder {
 
-    color: rgba(204,224,208,.22);
+    color: var(--text-faint);
 
 }
 
@@ -10452,7 +10452,7 @@ body {
 
     background: #13291c;
 
-    color: #eef7f0;
+    color: var(--text-primary);
 
 }
 
@@ -10511,7 +10511,7 @@ body {
 
     padding-top: 17px;
 
-    color: rgba(158,193,161,.46);
+    color: var(--text-muted);
 
     font-size: 11px;
 
@@ -10538,7 +10538,7 @@ body {
 
     background: transparent;
 
-    color: #edf7ef;
+    color: var(--text-primary);
 
     font-family: 'Poppins', sans-serif;
 
@@ -10551,7 +10551,7 @@ body {
 
 .liquid-textarea textarea::placeholder {
 
-    color: rgba(204,224,208,.22);
+    color: var(--text-faint);
 
 }
 
@@ -10564,7 +10564,7 @@ body {
 
     bottom: 9px;
 
-    color: rgba(204,225,208,.23);
+    color: var(--text-faint);
 
     font-size: 7px;
 
@@ -10594,7 +10594,7 @@ body {
 
     margin-top: 6px;
 
-    color: #d88a8a;
+    color: var(--accent);
 
     font-size: 7px;
 
@@ -10652,7 +10652,7 @@ body {
         rgba(255,255,255,.03);
 
     color:
-        rgba(221,236,224,.45) !important;
+        var(--text-muted) !important;
 
     font-size: 9px;
 
@@ -10849,7 +10849,7 @@ body {
 .preview-header > div:first-child span {
 
     color:
-        rgba(182,210,187,.33);
+        var(--text-faint);
 
     font-size: 6px;
 
@@ -10862,7 +10862,7 @@ body {
 
     margin: 3px 0 0;
 
-    color: #edf7ef;
+    color: var(--text-primary);
 
     font-size: 12px;
 
@@ -10913,7 +10913,7 @@ body {
 
 .preview-status.pending {
 
-    color: #dbc476;
+    color: var(--accent);
 
     background:
         rgba(194,160,66,.08);
@@ -10923,7 +10923,7 @@ body {
 
 .preview-status.confirmed {
 
-    color: #96d09f;
+    color: var(--accent);
 
     background:
         rgba(81,160,94,.08);
@@ -10933,7 +10933,7 @@ body {
 
 .preview-status.completed {
 
-    color: #8dc2c7;
+    color: var(--accent);
 
     background:
         rgba(77,154,163,.08);
@@ -10943,7 +10943,7 @@ body {
 
 .preview-status.cancelled {
 
-    color: #d78686;
+    color: var(--accent);
 
     background:
         rgba(185,74,74,.08);
@@ -11002,7 +11002,7 @@ body {
 
 .date-box span {
 
-    color: #b2d1a9;
+    color: var(--accent);
 
     font-size: 22px;
 
@@ -11018,7 +11018,7 @@ body {
     margin-top: 4px;
 
     color:
-        rgba(197,218,201,.34);
+        var(--text-faint);
 
     font-size: 6px;
 
@@ -11032,7 +11032,7 @@ body {
     display: block;
 
     color:
-        rgba(183,210,188,.30);
+        var(--text-faint);
 
     font-size: 6px;
 
@@ -11045,7 +11045,7 @@ body {
 
     margin: 4px 0 3px;
 
-    color: #edf7ef;
+    color: var(--text-primary);
 
     font-size: 11px;
 
@@ -11059,7 +11059,7 @@ body {
     margin: 0;
 
     color:
-        rgba(207,227,211,.32);
+        var(--text-faint);
 
     font-size: 7px;
 
@@ -11129,7 +11129,7 @@ body {
     background:
         rgba(144,188,138,.09);
 
-    color: #add0a4;
+    color: var(--accent);
 
     font-size: 13px;
 
@@ -11141,7 +11141,7 @@ body {
 .preview-patient span {
 
     color:
-        rgba(183,210,188,.29);
+        var(--text-faint);
 
     font-size: 6px;
 
@@ -11155,7 +11155,7 @@ body {
     margin: 2px 0;
 
     color:
-        rgba(239,247,240,.77);
+        var(--text-secondary);
 
     font-size: 10px;
 
@@ -11167,7 +11167,7 @@ body {
     margin: 0;
 
     color:
-        rgba(207,227,211,.30);
+        var(--text-faint);
 
     font-size: 7px;
 
@@ -11225,7 +11225,7 @@ body {
     background:
         rgba(143,187,137,.07);
 
-    color: #91b38e;
+    color: var(--accent);
 
     font-size: 8px;
 
@@ -11237,7 +11237,7 @@ body {
     display: block;
 
     color:
-        rgba(183,210,188,.27);
+        var(--text-faint);
 
     font-size: 6px;
 
@@ -11251,7 +11251,7 @@ body {
     margin-top: 2px;
 
     color:
-        rgba(235,245,237,.61);
+        var(--text-muted);
 
     font-size: 8px;
 
@@ -11290,7 +11290,7 @@ body {
     margin-bottom: 4px;
 
     color:
-        rgba(183,210,188,.27);
+        var(--text-faint);
 
     font-size: 6px;
 
@@ -11308,7 +11308,7 @@ body {
     margin: 0;
 
     color:
-        rgba(211,229,214,.36);
+        var(--text-faint);
 
     font-size: 7px;
 
@@ -11366,7 +11366,7 @@ body {
     background:
         rgba(143,187,137,.08);
 
-    color: #96b992;
+    color: var(--accent);
 
 }
 
@@ -11376,7 +11376,7 @@ body {
     display: block;
 
     color:
-        rgba(181,209,186,.30);
+        var(--text-faint);
 
     font-size: 6px;
 
@@ -11389,7 +11389,7 @@ body {
 
     margin: 2px 0 4px;
 
-    color: #eaf5ec;
+    color: var(--text-primary);
 
     font-size: 10px;
 
@@ -11401,7 +11401,7 @@ body {
     margin: 0;
 
     color:
-        rgba(207,225,211,.29);
+        var(--text-faint);
 
     font-size: 7px;
 
@@ -11447,7 +11447,7 @@ body {
 
     margin-top: 1px;
 
-    color: #8fac8c;
+    color: var(--accent);
 
     font-size: 8px;
 
@@ -11457,7 +11457,7 @@ body {
 .appointment-info-glass span {
 
     color:
-        rgba(205,225,209,.28);
+        var(--text-faint);
 
     font-size: 7px;
 
@@ -11623,7 +11623,7 @@ body {
 
 .consultation-eyebrow {
 
-    color: #8eb59a;
+    color: var(--accent);
 
     font-size: 10px;
     font-weight: 700;
@@ -11636,7 +11636,7 @@ body {
 
     margin: 4px 0;
 
-    color: #f3faf4;
+    color: var(--text-primary);
 
     font-size: 32px;
 
@@ -11646,7 +11646,7 @@ body {
 
     margin: 0;
 
-    color: rgba(220,235,223,.48);
+    color: var(--text-muted);
 
     font-size: 13px;
 
@@ -11699,7 +11699,7 @@ body {
     background:
         rgba(86,157,97,.11);
 
-    color: #b8deb9;
+    color: var(--accent);
 
 }
 
@@ -11758,26 +11758,26 @@ body {
     background:
         rgba(136,184,139,.10);
 
-    color: #a7ce9f;
+    color: var(--accent);
 
 }
 
 .consultation-stat-icon.today {
 
-    color: #8fc5bd;
+    color: var(--accent);
 
 }
 
 .consultation-stat-icon.patients {
 
-    color: #d8c172;
+    color: var(--accent);
 
 }
 
 .consultation-stat span {
 
     color:
-        rgba(215,232,218,.42);
+        var(--text-muted);
 
     font-size: 9px;
 
@@ -11787,7 +11787,7 @@ body {
 
     margin: 3px 0 0;
 
-    color: #f3f9f4;
+    color: var(--text-primary);
 
     font-size: 25px;
 
@@ -11830,7 +11830,7 @@ body {
 .consultations-card-header span {
 
     color:
-        rgba(190,214,194,.35);
+        var(--text-faint);
 
     font-size: 8px;
 
@@ -11842,7 +11842,7 @@ body {
 
     margin: 4px 0 0;
 
-    color: #eff7f0;
+    color: var(--text-primary);
 
     font-size: 18px;
 
@@ -11850,7 +11850,7 @@ body {
 
 .consultations-card-header > i {
 
-    color: #9fc5ad;
+    color: var(--accent);
 
     font-size: 23px;
 
@@ -11900,7 +11900,7 @@ body {
 
 .consultation-date strong {
 
-    color: #c0dabc;
+    color: var(--accent);
 
     font-size: 17px;
 
@@ -11909,7 +11909,7 @@ body {
 .consultation-date span {
 
     color:
-        rgba(212,230,215,.38);
+        var(--text-faint);
 
     font-size: 7px;
 
@@ -11925,7 +11925,7 @@ body {
 
     margin: 0 0 4px;
 
-    color: #eef7f0;
+    color: var(--text-primary);
 
     font-size: 13px;
 
@@ -11936,7 +11936,7 @@ body {
     margin: 0 0 6px;
 
     color:
-        rgba(214,230,217,.45);
+        var(--text-muted);
 
     font-size: 10px;
 
@@ -11953,7 +11953,7 @@ body {
 .consultation-meta span {
 
     color:
-        rgba(208,226,211,.34);
+        var(--text-faint);
 
     font-size: 8px;
 
@@ -11963,7 +11963,7 @@ body {
 
     margin-right: 3px;
 
-    color: #8faf91;
+    color: var(--accent);
 
 }
 
@@ -11982,7 +11982,7 @@ body {
     background:
         rgba(143,185,139,.09);
 
-    color: #aacaa5;
+    color: var(--accent);
 
     font-size: 9px;
 
@@ -11998,7 +11998,7 @@ body {
     text-align: center;
 
     color:
-        rgba(214,231,217,.40);
+        var(--text-muted);
 
 }
 
@@ -12006,7 +12006,7 @@ body {
 
     margin-bottom: 13px;
 
-    color: #9abb98;
+    color: var(--accent);
 
     font-size: 37px;
 
@@ -12014,7 +12014,7 @@ body {
 
 .empty-consultations h5 {
 
-    color: #edf6ee;
+    color: var(--text-primary);
 
 }
 
@@ -12024,7 +12024,7 @@ body {
 
     margin-top: 12px;
 
-    color: #abd0a5;
+    color: var(--accent);
 
 }
 
@@ -12073,7 +12073,7 @@ body {
 .field-hint {
     display: block;
     margin-top: 8px;
-    color: rgba(207,226,211,.35);
+    color: var(--text-faint);
     font-size: 8px;
 }
 
@@ -12111,7 +12111,7 @@ body {
 
 .payments-eyebrow {
 
-    color: #8eb59a;
+    color: var(--accent);
 
     font-size: 10px;
 
@@ -12125,7 +12125,7 @@ body {
 
     margin: 4px 0;
 
-    color: #f3faf4;
+    color: var(--text-primary);
 
     font-size: 32px;
 }
@@ -12135,7 +12135,7 @@ body {
 
     margin: 0;
 
-    color: rgba(220,235,223,.48);
+    color: var(--text-muted);
 
     font-size: 13px;
 }
@@ -12183,7 +12183,7 @@ body {
     border:
         1px solid rgba(120,195,131,.20);
 
-    color: #bce1c1;
+    color: var(--text-primary);
 }
 
 
@@ -12239,25 +12239,25 @@ body {
     background:
         rgba(189,167,93,.10);
 
-    color: #dbc879;
+    color: var(--accent);
 }
 
 
 .stat-payment-icon.green {
 
-    color: #92d39b;
+    color: var(--accent);
 }
 
 
 .stat-payment-icon.yellow {
 
-    color: #ddbd66;
+    color: var(--accent);
 }
 
 
 .payment-stat span {
 
-    color: rgba(219,235,221,.42);
+    color: var(--text-muted);
 
     font-size: 9px;
 }
@@ -12267,7 +12267,7 @@ body {
 
     margin: 3px 0 0;
 
-    color: white;
+    color: var(--text-primary);
 
     font-size: 22px;
 
@@ -12310,7 +12310,7 @@ body {
 
 .payments-card-header span {
 
-    color: rgba(194,215,197,.35);
+    color: var(--text-faint);
 
     font-size: 8px;
 
@@ -12322,7 +12322,7 @@ body {
 
     margin: 4px 0 0;
 
-    color: #eff7f0;
+    color: var(--text-primary);
 
     font-size: 18px;
 }
@@ -12330,7 +12330,7 @@ body {
 
 .payments-card-header > i {
 
-    color: #cdbb75;
+    color: var(--accent);
 
     font-size: 22px;
 }
@@ -12358,7 +12358,7 @@ body {
 
     background: transparent !important;
 
-    color: rgba(229,240,231,.72);
+    color: var(--text-secondary);
 }
 
 
@@ -12383,7 +12383,7 @@ body {
 
     border: none !important;
 
-    color: rgba(193,216,197,.40);
+    color: var(--text-muted);
 
     font-size: 8px;
 
@@ -12424,7 +12424,7 @@ body {
             rgba(255,255,255,.022)
         ) !important;
 
-    color: rgba(225,238,228,.67);
+    color: var(--text-secondary);
 
     font-size: 10px;
 }
@@ -12474,7 +12474,7 @@ body {
 
 .payment-table tbody td:first-child {
 
-    color: #a7c6a1;
+    color: var(--accent);
 
     font-weight: 600;
 }
@@ -12484,7 +12484,7 @@ body {
 
 .payment-table strong {
 
-    color: #eef7ef;
+    color: var(--text-primary);
 
     font-weight: 600;
 }
@@ -12494,7 +12494,7 @@ body {
 
 .payment-amount {
 
-    color: #c3deb9 !important;
+    color: var(--accent) !important;
 
     font-size: 11px !important;
 
@@ -12520,7 +12520,7 @@ body {
     background:
         rgba(82,167,96,.12);
 
-    color: #9cd2a5;
+    color: var(--accent);
 }
 
 
@@ -12529,7 +12529,7 @@ body {
     background:
         rgba(205,171,80,.10);
 
-    color: #dec273;
+    color: var(--accent);
 }
 
 
@@ -12538,7 +12538,7 @@ body {
     background:
         rgba(195,83,83,.10);
 
-    color: #db9191;
+    color: var(--accent);
 }
 
 
@@ -12548,7 +12548,7 @@ body {
 
     text-align: center;
 
-    color: rgba(219,235,221,.45);
+    color: var(--text-muted);
 }
 
 
@@ -12556,7 +12556,7 @@ body {
 
     margin-bottom: 15px;
 
-    color: #b6cfae;
+    color: var(--accent);
 
     font-size: 38px;
 }
@@ -12564,7 +12564,7 @@ body {
 
 .empty-payments h5 {
 
-    color: #eef6ef;
+    color: var(--text-primary);
 }
 
 
@@ -12574,7 +12574,7 @@ body {
 
     margin-top: 12px;
 
-    color: #acd2a4;
+    color: var(--accent);
 }
 
 
@@ -12666,7 +12666,7 @@ body {
 
     margin-bottom: 6px;
 
-    color: #8eb59a;
+    color: var(--accent);
 
     font-size: 10px;
 
@@ -12681,7 +12681,7 @@ body {
 
     margin: 0;
 
-    color: #f4faf5;
+    color: var(--text-primary);
 
     font-size: 32px;
 
@@ -12694,7 +12694,7 @@ body {
 
     margin: 6px 0 0;
 
-    color: rgba(218, 235, 222, .52);
+    color: var(--text-muted);
 
     font-size: 13px;
 
@@ -12726,7 +12726,7 @@ body {
 
     backdrop-filter: blur(16px);
 
-    color: #b9cfbd !important;
+    color: var(--accent) !important;
 
     font-size: 12px;
 
@@ -12743,7 +12743,7 @@ body {
 
     background: rgba(255,255,255,.11);
 
-    color: #ffffff !important;
+    color: var(--text-primary) !important;
 
     transform: translateY(-1px);
 
@@ -12943,7 +12943,7 @@ body {
             rgba(255,255,255,.04)
         );
 
-    color: #acd09f;
+    color: var(--accent);
 
     font-size: 23px;
 
@@ -12956,7 +12956,7 @@ body {
 
     margin-bottom: 5px;
 
-    color: #8fb496;
+    color: var(--accent);
 
     font-size: 9px;
 
@@ -12969,7 +12969,7 @@ body {
 
     margin: 0;
 
-    color: #f3faf4;
+    color: var(--text-primary);
 
     font-size: 24px;
 
@@ -12982,7 +12982,7 @@ body {
 
     margin: 6px 0 0;
 
-    color: rgba(218,235,222,.45);
+    color: var(--text-muted);
 
     font-size: 11px;
 
@@ -13027,7 +13027,7 @@ body {
 
     margin-bottom: 8px;
 
-    color: rgba(229,241,231,.72);
+    color: var(--text-secondary);
 
     font-size: 11px;
 
@@ -13040,14 +13040,14 @@ body {
 
     width: 14px;
 
-    color: #8eb58d;
+    color: var(--accent);
 
 }
 
 
 .nutri-form-group label span {
 
-    color: #a8cfa1;
+    color: var(--accent);
 
 }
 
@@ -13070,7 +13070,7 @@ body {
 
         rgba(255,255,255,.055) !important;
 
-    color: #edf6ef !important;
+    color: var(--text-primary) !important;
 
     font-size: 12px;
 
@@ -13104,7 +13104,7 @@ body {
 
     color:
 
-        rgba(220,235,223,.25);
+        var(--text-faint);
 
 }
 
@@ -13123,7 +13123,7 @@ select.nutri-input option {
 
     background: #14271c;
 
-    color: #edf6ef;
+    color: var(--text-primary);
 
 }
 
@@ -13176,7 +13176,7 @@ input[type="datetime-local"] {
 
     transform: translateY(-50%);
 
-    color: #9fc397;
+    color: var(--accent);
 
     font-size: 14px;
 
@@ -13206,7 +13206,7 @@ input[type="datetime-local"] {
 
     color:
 
-        rgba(208,228,211,.35);
+        var(--text-faint);
 
     font-size: 9px;
 
@@ -13228,7 +13228,7 @@ input[type="datetime-local"] {
 
     color:
 
-        rgba(208,227,211,.32);
+        var(--text-faint);
 
     font-size: 9px;
 
@@ -13250,7 +13250,7 @@ input[type="datetime-local"] {
 
     margin-top: 6px;
 
-    color: #db8c8c;
+    color: var(--accent);
 
     font-size: 9px;
 
@@ -13316,7 +13316,7 @@ input[type="datetime-local"] {
 
     color:
 
-        rgba(225,238,228,.60) !important;
+        var(--text-muted) !important;
 
     font-size: 11px;
 
@@ -13335,7 +13335,7 @@ input[type="datetime-local"] {
 
         rgba(255,255,255,.09);
 
-    color: white !important;
+    color: var(--text-primary) !important;
 
 }
 
@@ -13549,7 +13549,7 @@ body {
 
     margin-bottom: 5px;
 
-    color: #8eb49a;
+    color: var(--accent);
 
     font-size: 9px;
 
@@ -13564,7 +13564,7 @@ body {
 
     margin: 0;
 
-    color: #f3faf5;
+    color: var(--text-primary);
 
     font-size: 30px;
 
@@ -13579,7 +13579,7 @@ body {
 
     margin: 5px 0 0;
 
-    color: rgba(216,234,220,.44);
+    color: var(--text-muted);
 
     font-size: 11px;
 
@@ -13611,7 +13611,7 @@ body {
 
     background: rgba(255,255,255,.04);
 
-    color: rgba(229,240,231,.61) !important;
+    color: var(--text-muted) !important;
 
     font-size: 9px;
 
@@ -13630,7 +13630,7 @@ body {
 
     background: rgba(255,255,255,.07);
 
-    color: #eef8f0 !important;
+    color: var(--text-primary) !important;
 
 }
 
@@ -13838,7 +13838,7 @@ body {
 
     background: rgba(143,187,137,.09);
 
-    color: #9fc399;
+    color: var(--accent);
 
     font-size: 17px;
 
@@ -13847,7 +13847,7 @@ body {
 
 .heading-main span {
 
-    color: rgba(184,211,189,.35);
+    color: var(--text-faint);
 
     font-size: 7px;
 
@@ -13860,7 +13860,7 @@ body {
 
     margin: 3px 0;
 
-    color: #eef7f0;
+    color: var(--text-primary);
 
     font-size: 18px;
 
@@ -13873,7 +13873,7 @@ body {
 
     margin: 0;
 
-    color: rgba(208,228,212,.32);
+    color: var(--text-faint);
 
     font-size: 8px;
 
@@ -13920,7 +13920,7 @@ body {
 
     background: rgba(146,190,140,.11);
 
-    color: #aecda5;
+    color: var(--accent);
 
     font-size: 9px;
 
@@ -13933,7 +13933,7 @@ body {
 
     display: block;
 
-    color: rgba(191,216,196,.29);
+    color: var(--text-faint);
 
     font-size: 6px;
 
@@ -13948,7 +13948,7 @@ body {
 
     margin-top: 2px;
 
-    color: rgba(236,246,238,.67);
+    color: var(--text-secondary);
 
     font-size: 8px;
 
@@ -14015,7 +14015,7 @@ body {
 
     background: rgba(145,187,139,.08);
 
-    color: #9abe94;
+    color: var(--accent);
 
     font-size: 8px;
 
@@ -14028,7 +14028,7 @@ body {
 
     margin: 0;
 
-    color: rgba(239,248,241,.79);
+    color: var(--text-secondary);
 
     font-size: 12px;
 
@@ -14041,7 +14041,7 @@ body {
 
     margin: 2px 0 0;
 
-    color: rgba(207,226,211,.28);
+    color: var(--text-faint);
 
     font-size: 7px;
 
@@ -14067,7 +14067,7 @@ body {
 
     margin-bottom: 8px;
 
-    color: rgba(224,238,226,.58);
+    color: var(--text-muted);
 
     font-size: 9px;
 
@@ -14078,7 +14078,7 @@ body {
 
 .required {
 
-    color: #a8cb9d;
+    color: var(--accent);
 
 }
 
@@ -14087,7 +14087,7 @@ body {
 
     margin-left: 4px;
 
-    color: rgba(174,202,180,.27);
+    color: var(--text-faint);
 
     font-size: 7px;
 
@@ -14149,7 +14149,7 @@ body {
 
     justify-content: center;
 
-    color: rgba(158,193,161,.46);
+    color: var(--text-muted);
 
     font-size: 11px;
 
@@ -14172,7 +14172,7 @@ body {
 
     background: transparent;
 
-    color: #edf7ef;
+    color: var(--text-primary);
 
     font-family: 'Poppins', sans-serif;
 
@@ -14183,7 +14183,7 @@ body {
 
 .liquid-input input::placeholder {
 
-    color: rgba(204,224,208,.22);
+    color: var(--text-faint);
 
 }
 
@@ -14199,7 +14199,7 @@ body {
 
     padding-right: 13px;
 
-    color: rgba(201,220,205,.29);
+    color: var(--text-faint);
 
     font-size: 8px;
 
@@ -14293,7 +14293,7 @@ body {
 
     padding-top: 17px;
 
-    color: rgba(158,193,161,.46);
+    color: var(--text-muted);
 
     font-size: 11px;
 
@@ -14316,7 +14316,7 @@ body {
 
     background: transparent;
 
-    color: #edf7ef;
+    color: var(--text-primary);
 
     font-family: 'Poppins', sans-serif;
 
@@ -14329,7 +14329,7 @@ body {
 
 .liquid-textarea textarea::placeholder {
 
-    color: rgba(204,224,208,.22);
+    color: var(--text-faint);
 
 }
 
@@ -14342,7 +14342,7 @@ body {
 
     bottom: 9px;
 
-    color: rgba(204,225,208,.23);
+    color: var(--text-faint);
 
     font-size: 7px;
 
@@ -14365,7 +14365,7 @@ body {
 
     margin-top: 5px;
 
-    color: #d58a8a;
+    color: var(--accent);
 
     font-size: 7px;
 
@@ -14418,7 +14418,7 @@ body {
 
     background: rgba(255,255,255,.03);
 
-    color: rgba(221,236,224,.44) !important;
+    color: var(--text-muted) !important;
 
     font-size: 9px;
 
@@ -14612,7 +14612,7 @@ body {
 
     display: block;
 
-    color: rgba(182,210,187,.33);
+    color: var(--text-faint);
 
     font-size: 6px;
 
@@ -14626,7 +14626,7 @@ body {
 
     margin: 3px 0 0;
 
-    color: #ecf7ee;
+    color: var(--text-primary);
 
     font-size: 12px;
 
@@ -14647,7 +14647,7 @@ body {
 
     background: rgba(84,160,96,.07);
 
-    color: #94c99c;
+    color: var(--accent);
 
     font-size: 6px;
 
@@ -14713,7 +14713,7 @@ body {
 
     background: rgba(146,190,140,.10);
 
-    color: #afd0a5;
+    color: var(--accent);
 
     font-size: 10px;
 
@@ -14726,7 +14726,7 @@ body {
 
     display: block;
 
-    color: rgba(238,247,240,.77);
+    color: var(--text-secondary);
 
     font-size: 9px;
 
@@ -14741,7 +14741,7 @@ body {
 
     margin-top: 2px;
 
-    color: rgba(202,222,206,.29);
+    color: var(--text-faint);
 
     font-size: 7px;
 
@@ -14805,7 +14805,7 @@ body {
 
 .bmi-circle strong {
 
-    color: #edf7ef;
+    color: var(--text-primary);
 
     font-size: 21px;
 
@@ -14818,7 +14818,7 @@ body {
 
     margin-top: 1px;
 
-    color: rgba(183,209,188,.36);
+    color: var(--text-faint);
 
     font-size: 6px;
 
@@ -14829,7 +14829,7 @@ body {
 
 .bmi-info > span {
 
-    color: rgba(181,210,187,.30);
+    color: var(--text-faint);
 
     font-size: 6px;
 
@@ -14842,7 +14842,7 @@ body {
 
     margin: 3px 0 4px;
 
-    color: #aacda1;
+    color: var(--accent);
 
     font-size: 11px;
 
@@ -14853,7 +14853,7 @@ body {
 
     margin: 0;
 
-    color: rgba(207,227,211,.31);
+    color: var(--text-faint);
 
     font-size: 7px;
 
@@ -14917,7 +14917,7 @@ body {
 
     background: rgba(142,185,136,.07);
 
-    color: #93b790;
+    color: var(--accent);
 
     font-size: 8px;
 
@@ -14928,7 +14928,7 @@ body {
 
     display: block;
 
-    color: rgba(198,219,203,.28);
+    color: var(--text-faint);
 
     font-size: 6px;
 
@@ -14941,7 +14941,7 @@ body {
 
     margin-top: 3px;
 
-    color: #edf7ef;
+    color: var(--text-primary);
 
     font-size: 13px;
 
@@ -14952,7 +14952,7 @@ body {
 
 .live-values small {
 
-    color: rgba(200,220,204,.28);
+    color: var(--text-faint);
 
     font-size: 6px;
 
@@ -15008,7 +15008,7 @@ body {
 
     background: rgba(142,185,136,.08);
 
-    color: #94b790;
+    color: var(--accent);
 
     font-size: 9px;
 
@@ -15041,7 +15041,7 @@ body {
 
 .measure-preview-list span {
 
-    color: rgba(208,226,212,.36);
+    color: var(--text-faint);
 
     font-size: 7px;
 
@@ -15050,7 +15050,7 @@ body {
 
 .measure-preview-list strong {
 
-    color: rgba(236,246,238,.68);
+    color: var(--text-secondary);
 
     font-size: 8px;
 
@@ -15063,7 +15063,7 @@ body {
 
     content: " cm";
 
-    color: rgba(205,224,209,.25);
+    color: var(--text-faint);
 
     font-size: 6px;
 
@@ -15112,7 +15112,7 @@ body {
 
     background: rgba(139,183,134,.07);
 
-    color: #90b18d;
+    color: var(--accent);
 
     font-size: 9px;
 
@@ -15123,7 +15123,7 @@ body {
 
     margin: 0;
 
-    color: rgba(207,225,211,.30);
+    color: var(--text-faint);
 
     font-size: 7px;
 
@@ -15138,7 +15138,7 @@ body {
 
     margin-bottom: 2px;
 
-    color: rgba(235,244,237,.59);
+    color: var(--text-muted);
 
     font-size: 8px;
 
@@ -15327,7 +15327,7 @@ body {
 
 .progress-eyebrow {
 
-    color: #8eb59a;
+    color: var(--accent);
 
     font-size: 10px;
 
@@ -15342,7 +15342,7 @@ body {
 
     margin: 4px 0;
 
-    color: #f3faf4;
+    color: var(--text-primary);
 
     font-size: 32px;
 
@@ -15353,7 +15353,7 @@ body {
 
     margin: 0;
 
-    color: rgba(220,235,223,.48);
+    color: var(--text-muted);
 
     font-size: 13px;
 
@@ -15423,21 +15423,21 @@ body {
     background:
         rgba(133,184,133,.10);
 
-    color: #a9cfa2;
+    color: var(--accent);
 
 }
 
 
 .progress-stat-icon.comparison {
 
-    color: #d9c273;
+    color: var(--accent);
 
 }
 
 
 .progress-stat span {
 
-    color: rgba(217,233,220,.42);
+    color: var(--text-muted);
 
     font-size: 9px;
 
@@ -15448,7 +15448,7 @@ body {
 
     margin: 3px 0 0;
 
-    color: #f5faf6;
+    color: var(--text-primary);
 
     font-size: 25px;
 
@@ -15497,7 +15497,7 @@ body {
 
 .progress-panel-header span {
 
-    color: rgba(191,214,195,.36);
+    color: var(--text-faint);
 
     font-size: 8px;
 
@@ -15510,7 +15510,7 @@ body {
 
     margin: 4px 0 0;
 
-    color: #eff7f0;
+    color: var(--text-primary);
 
     font-size: 18px;
 
@@ -15534,7 +15534,7 @@ body {
     background:
         rgba(145,186,139,.10);
 
-    color: #a7c99f;
+    color: var(--accent);
 
 }
 
@@ -15642,7 +15642,7 @@ body {
 
     margin: 0 0 3px;
 
-    color: #f0f7f1;
+    color: var(--text-primary);
 
     font-size: 13px;
 
@@ -15653,7 +15653,7 @@ body {
 
     margin: 0;
 
-    color: rgba(216,231,218,.40);
+    color: var(--text-muted);
 
     font-size: 9px;
 
@@ -15671,7 +15671,7 @@ body {
     background:
         rgba(143,184,137,.09);
 
-    color: #9fc399;
+    color: var(--accent);
 
     font-size: 8px;
 
@@ -15715,7 +15715,7 @@ body {
 
     margin-bottom: 4px;
 
-    color: rgba(213,230,216,.38);
+    color: var(--text-faint);
 
     font-size: 8px;
 
@@ -15724,7 +15724,7 @@ body {
 
 .patient-progress-data strong {
 
-    color: #edf6ef;
+    color: var(--text-primary);
 
     font-size: 13px;
 
@@ -15733,14 +15733,14 @@ body {
 
 .change-down {
 
-    color: #91cf9c !important;
+    color: var(--accent) !important;
 
 }
 
 
 .change-up {
 
-    color: #d9bb72 !important;
+    color: var(--accent) !important;
 
 }
 
@@ -15761,7 +15761,7 @@ body {
     background:
         rgba(209,177,90,.07);
 
-    color: #c9b66f;
+    color: var(--accent);
 
     font-size: 8px;
 
@@ -15774,7 +15774,7 @@ body {
 
     text-align: center;
 
-    color: rgba(214,230,216,.40);
+    color: var(--text-muted);
 
     font-size: 9px;
 
@@ -15787,7 +15787,7 @@ body {
 
     margin-bottom: 7px;
 
-    color: #91ae91;
+    color: var(--accent);
 
     font-size: 19px;
 
@@ -15844,7 +15844,7 @@ body {
     background:
         rgba(142,187,137,.10);
 
-    color: #abd0a5 !important;
+    color: var(--accent) !important;
 
 }
 
@@ -15864,7 +15864,7 @@ body {
         1px solid rgba(255,255,255,.09);
 
     color:
-        rgba(221,236,223,.58) !important;
+        var(--text-muted) !important;
 
 }
 
@@ -15880,7 +15880,7 @@ body {
 
     text-align: center;
 
-    color: rgba(215,231,218,.40);
+    color: var(--text-muted);
 
 }
 
@@ -15889,7 +15889,7 @@ body {
 
     margin-bottom: 12px;
 
-    color: #91ad91;
+    color: var(--accent);
 
     font-size: 36px;
 
@@ -15898,7 +15898,7 @@ body {
 
 .progress-empty h5 {
 
-    color: #edf6ef;
+    color: var(--text-primary);
 
 }
 
@@ -15964,7 +15964,7 @@ body {
 
 .progress-eyebrow {
 
-    color: #8eb59a;
+    color: var(--accent);
 
     font-size: 10px;
 
@@ -15978,7 +15978,7 @@ body {
 
     margin: 4px 0;
 
-    color: #f3faf4;
+    color: var(--text-primary);
 
     font-size: 30px;
 
@@ -15988,7 +15988,7 @@ body {
 
     margin: 0;
 
-    color: rgba(220,235,223,.45);
+    color: var(--text-muted);
 
     font-size: 12px;
 
@@ -16032,7 +16032,7 @@ body {
 
     background: rgba(255,255,255,.045);
 
-    color: #c9dbcb !important;
+    color: var(--text-primary) !important;
 
 }
 
@@ -16072,7 +16072,7 @@ body {
 
     display: block;
 
-    color: rgba(214,230,217,.40);
+    color: var(--text-muted);
 
     font-size: 9px;
 
@@ -16084,7 +16084,7 @@ body {
 
     margin: 5px 0;
 
-    color: #f1f8f2;
+    color: var(--text-primary);
 
     font-size: 23px;
 
@@ -16092,7 +16092,7 @@ body {
 
 .detail-stat small {
 
-    color: #9fbd9f;
+    color: var(--accent);
 
     font-size: 8px;
 
@@ -16143,7 +16143,7 @@ body {
 
 .chart-title span {
 
-    color: rgba(191,214,194,.35);
+    color: var(--text-faint);
 
     font-size: 8px;
 
@@ -16155,7 +16155,7 @@ body {
 
     margin: 3px 0 0;
 
-    color: #eff7f0;
+    color: var(--text-primary);
 
     font-size: 16px;
 
@@ -16163,7 +16163,7 @@ body {
 
 .chart-title > i {
 
-    color: #a7c99f;
+    color: var(--accent);
 
     font-size: 20px;
 
@@ -16188,7 +16188,7 @@ body {
 
 .progress-history-table {
 
-    color: rgba(225,238,227,.68);
+    color: var(--text-secondary);
 
 }
 
@@ -16196,7 +16196,7 @@ body {
 
     border: none !important;
 
-    color: rgba(203,222,206,.35);
+    color: var(--text-faint);
 
     font-size: 8px;
 
@@ -16226,7 +16226,7 @@ body {
         rgba(255,255,255,.04);
 
     color:
-        rgba(218,232,220,.45);
+        var(--text-muted);
 
 }
 
@@ -16234,7 +16234,7 @@ body {
 
     margin-bottom: 15px;
 
-    color: #9aba95;
+    color: var(--accent);
 
     font-size: 42px;
 
@@ -16242,7 +16242,7 @@ body {
 
 .progress-empty-detail h4 {
 
-    color: #eff7f0;
+    color: var(--text-primary);
 
 }
 
@@ -16252,7 +16252,7 @@ body {
 
     margin-top: 12px;
 
-    color: #a9cfa2;
+    color: var(--accent);
 
 }
 
